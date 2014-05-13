@@ -3,10 +3,10 @@
 
 steroids.config.name = "<%= name %>"
 
-# -- Initial Location --
+# ## Initial Location
 steroids.config.location = "http://localhost/<%= initialView %>"
 
-# -- Tab Bar --
+# ## Tab Bar
 # steroids.config.tabBar.enabled = true
 # steroids.config.tabBar.tabs = [
 #   {
@@ -28,30 +28,61 @@ steroids.config.location = "http://localhost/<%= initialView %>"
 
 # steroids.config.tabBar.backgroundImage = ""
 
-# -- Navigation Bar --
+# ## Preloads
+# steroids.config.preloads = [
+#   {
+#     id: "google"
+#     location: "http://www.google.com"
+#   }
+# ]
+
+# ## Drawers
+# steroids.drawers =
+#   left:
+#     widthOfDrawerInPixels: 200
+#     id: "leftDrawer"
+#     location: "leftDrawer.html"
+#     showOnAppLoad: true
+#   right:
+#     widthOfDrawerInPixels: 200
+#     id: "rightDrawer"
+#     location: "rightDrawer.html"
+#     showOnAppLoad: false
+#   options:
+#     widthOfLayerInPixels: null
+#     showShadow: true
+#     openGestures: []
+#     closeGestures: []
+#     stretchDrawer: true
+#     centerViewInteractionMode: "Full"
+
+# ## Navigation Bar
 steroids.config.navigationBar.tintColor = "#00aeef"
 steroids.config.navigationBar.titleColor = "#ffffff"
 steroids.config.navigationBar.buttonTintColor = "#ffffff"
 
+# steroids.config.navigationBar.borderColor = "#000000"
+# steroids.config.navigationBar.borderSize = 2
+
 # steroids.config.navigationBar.landscape.backgroundImage = ""
 # steroids.config.navigationBar.portrait.backgroundImage = ""
 
-# -- Android Loading Screen
+# ## Android Loading Screen
 steroids.config.loadingScreen.tintColor = "#262626"
 
-# -- iOS Status Bar --
+# ## iOS Status Bar
 steroids.config.statusBar.enabled = true
 steroids.config.statusBar.style = "default"
 
-# -- File Watcher --
+# ## File Watcher
 # steroids.config.watch.exclude = ["www/my_excluded_file.js", "www/my_excluded_dir"]
 
-# -- Pre- and Post-Make hooks --
+# ## Pre- and Post-Make Hooks
 # steroids.config.hooks.preMake.cmd = "echo"
 # steroids.config.hooks.preMake.args = ["running yeoman"]
 # steroids.config.hooks.postMake.cmd = "echo"
 # steroids.config.hooks.postMake.args = ["cleaning up files"]
 
-# -- Default Editor --
+# ## Default Editor
 # steroids.config.editor.cmd = "subl"
 # steroids.config.editor.args = ["."]

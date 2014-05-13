@@ -1,3 +1,12 @@
+#0.3.2 (TODO)
+
+Default `config/application.coffee` now has new configs added in Scanner for iOS v3.1.5.
+
+Features:
+  - `steroids.config.drawers` added to default `config/application.coffee`
+  - `steroids.config.preloads` added to default `config/application.coffee`
+  - `steroids.config.navigationBar.borderColor` and `steroids.config.navigationBar.borderSize` added to `config/application.coffee`.
+
 #0.3.1 (2014-05-06)
 
 New projects now include Steroids.js v3.1.9. Fixed `steroids` tutorial on Android.
