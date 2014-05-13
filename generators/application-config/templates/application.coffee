@@ -37,7 +37,7 @@ steroids.config.location = "http://localhost/<%= initialView %>"
 # ]
 
 # ## Drawers
-# steroids.drawers =
+# steroids.config.drawers =
 #   left:
 #     widthOfDrawerInPixels: 200
 #     id: "leftDrawer"
