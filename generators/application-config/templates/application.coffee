@@ -39,22 +39,22 @@ steroids.config.location = "http://localhost/<%= initialView %>"
 # ## Drawers
 # steroids.config.drawers =
 #   left:
-#     widthOfDrawerInPixels: 200
 #     id: "leftDrawer"
-#     location: "leftDrawer.html"
+#     location: "http://localhost/leftDrawer.html"
 #     showOnAppLoad: true
-#   right:
 #     widthOfDrawerInPixels: 200
+#   right:
 #     id: "rightDrawer"
-#     location: "rightDrawer.html"
+#     location: "http://localhost/rightDrawer.html"
 #     showOnAppLoad: false
+#     widthOfDrawerInPixels: 200
 #   options:
-#     widthOfLayerInPixels: null
-#     showShadow: true
-#     openGestures: []
-#     closeGestures: []
-#     stretchDrawer: true
 #     centerViewInteractionMode: "Full"
+#     closeGestures: ["PanNavBar", "PanCenterView", "TapCenterView"]
+#     openGestures: ["PanNavBar", "PanCenterView"]
+#     showShadow: true
+#     stretchDrawer: true
+#     widthOfLayerInPixels: 0
 
 # ## Navigation Bar
 steroids.config.navigationBar.tintColor = "#00aeef"
