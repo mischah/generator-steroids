@@ -1,4 +1,4 @@
-#0.3.2 (TODO)
+#0.3.2 (2014-05-14)
 
 Default `config/application.coffee` now has new configs added in Scanner for iOS v3.1.5.
 
