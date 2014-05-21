@@ -3,8 +3,8 @@
 
 steroids.config.name = "<%= name %>"
 
-# ## Initial Location
-steroids.config.location = "http://localhost/<%= initialView %>"
+# ## Start Location
+steroids.config.location = "http://localhost/<%= startView %>"
 
 # ## Tab Bar
 # steroids.config.tabBar.enabled = true
@@ -55,6 +55,11 @@ steroids.config.location = "http://localhost/<%= initialView %>"
 #     showShadow: true
 #     stretchDrawer: true
 #     widthOfLayerInPixels: 0
+
+# ## Initial View
+# steroids.config.initialView =
+#   id: "initialView"
+#   location: "http://localhost/initialView.html"
 
 # ## Navigation Bar
 steroids.config.navigationBar.tintColor = "#00aeef"

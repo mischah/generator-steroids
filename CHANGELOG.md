@@ -1,3 +1,14 @@
+#0.3.3 (2014-05-21)
+
+Default `config/application.coffee` has new configs added in iOS native runtime v3.1.6; Steroids.js no longer included with the default project template.
+
+Features:
+  - `steroids.config.initialView` added to default `config/application.coffee`
+
+Changes:
+  - `steroids` generator now installs both npm and Bower dependencies.
+  - Steroids.js no longer included with the default project template.
+
 #0.3.2 (2014-05-14)
 
 Default `config/application.coffee` now has new configs added in Scanner for iOS v3.1.5.
@@ -5,7 +16,7 @@ Default `config/application.coffee` now has new configs added in Scanner for iOS
 Features:
   - `steroids.config.drawers` added to default `config/application.coffee`
   - `steroids.config.preloads` added to default `config/application.coffee`
-  - `steroids.config.navigationBar.borderColor` and `steroids.config.navigationBar.borderSize` added to `config/application.coffee`.
+  - `steroids.config.navigationBar.borderColor` and `steroids.config.navigationBar.borderSize` added to default `config/application.coffee`.
 
 #0.3.1 (2014-05-06)
 
