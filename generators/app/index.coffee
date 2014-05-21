@@ -17,16 +17,8 @@ module.exports = class SteroidsGenerator extends yeoman.generators.Base
         process.exit(1)
 
     @on "end", ->
-      if not @options['skip-install']
-        @log.writeln(
-          """
-          \n#{chalk.green.bold("Installing npm dependencies...")}
-
-          If this doesn't work, try running #{chalk.bold("npm install")} manually in your project folder.
-
-          """
-        )
-        @npmInstall()
+      @installDependencies
+        skipInstall: @options['skip-install']
 
     @argument 'folderName', {
       type: String
