@@ -1,0 +1,6 @@
+<div ng-controller="ShowCtrl" class="padding">
+  <h2>{{ <%= resourceName %>['<%= fields[0] %>'] }}</h2>
+  <% fields.forEach( function(field) { %>
+    <% if (field!=fields[0]) { %> <p><%= field %>: {{ <%= resourceName %>['<%= field %>'] }}</p> <% } %>
+  <% } ) %>
+</div>
