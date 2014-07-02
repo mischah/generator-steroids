@@ -27,7 +27,7 @@ module.exports = class DolanDbScaffoldGenerator extends yeoman.generators.NamedB
         """
       )
       bower = new Bower
-      bower.install([ 'angular#1.2.16', 'angular-touch#1.2.16', 'restangular#1.3.1' ], { save: true });
+      bower.install([ 'angular#1.2.16', 'angular-touch#1.2.16', 'restangular#1.3.1', 'steroids-data#0.x' ], { save: true });
 
   app: ->
     @mkdir "app/controllers"
