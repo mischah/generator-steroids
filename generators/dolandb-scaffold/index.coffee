@@ -3,37 +3,26 @@ yeoman = require "yeoman-generator"
 chalk = require "chalk"
 Bower = require "../../lib/Bower"
 
-module.exports = class NgResourceGenerator extends yeoman.generators.NamedBase
+module.exports = class DolanDbScaffoldGenerator extends yeoman.generators.NamedBase
   constructor: (args, options, config) ->
     yeoman.generators.Base.apply this, arguments
-
-    console.log "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
-    console.log "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
-    console.log "LLLLLLLLLLLLLLL           LLLLLLLLLLLLLLLLLLL"
-    console.log "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
-    console.log "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
-
-    #process.exit(1)
 
     @default = args[0]
 
     @resourceName = args[0]
     args.splice(0,1)
     @fields = args
-    console.log args
-    console.log @resourceName
-    console.log @fields
 
     @on "end", ->
       @log.writeln(
         """
-        \n#{chalk.bold("ng-resource")} created! Set the location of your app to
+        \nScaffold for resource #{@resourceName} created! Set the location of your app to
 
-          "http://localhost/views/#{@resourceName}/index.html"
+          #{chalk.bold("\"http://localhost/views/#{@resourceName}/index.html\"")}
 
-        and then modify the data in "www/data/#{@resourceName}.json"
+        in #{chalk.bold("config/application.coffee")}.
 
-        In the meantime, we'll install the following Bower dependencies:
+        Next up, we'll install the following Bower dependencies:
 
         """
       )
