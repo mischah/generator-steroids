@@ -3,7 +3,7 @@ yeoman = require "yeoman-generator"
 chalk = require "chalk"
 Bower = require "../../lib/Bower"
 
-module.exports = class DolanDbScaffoldGenerator extends yeoman.generators.NamedBase
+module.exports = class SandboxScaffoldGenerator extends yeoman.generators.NamedBase
   constructor: (args, options, config) ->
     yeoman.generators.Base.apply this, arguments
 
@@ -16,7 +16,7 @@ module.exports = class DolanDbScaffoldGenerator extends yeoman.generators.NamedB
     @on "end", ->
       @log.writeln(
         """
-        \nScaffold for resource #{@resourceName} created! Set the location of your app to
+        \nScaffold for SandboxDB resource #{@resourceName} created! Set the location of your app to
 
           #{chalk.bold("\"http://localhost/views/#{@resourceName}/index.html\"")}
 
