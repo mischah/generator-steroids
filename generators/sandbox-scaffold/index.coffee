@@ -40,4 +40,6 @@ module.exports = class SandboxScaffoldGenerator extends yeoman.generators.NamedB
     @template "app/models/_resourceName.coffee", "app/models/#{@resourceName}.coffee"
     @template "app/views/resourceName/_index.html", "app/views/#{@resourceName}/index.html"
     @template "app/views/resourceName/_show.html", "app/views/#{@resourceName}/show.html"
-    @template "app/views/resourceName/_create.html", "app/views/#{@resourceName}/create.html"
+    @template "app/views/resourceName/_edit.html", "app/views/#{@resourceName}/edit.html"
+    @template "app/views/resourceName/_new.html", "app/views/#{@resourceName}/new.html"
+    @template "app/views/resourceName/__form.html", "app/views/#{@resourceName}/_form.html"

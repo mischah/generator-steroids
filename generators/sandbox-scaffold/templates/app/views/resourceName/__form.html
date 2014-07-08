@@ -1,0 +1,17 @@
+<div class="list">
+
+  <% fields.forEach( function(field) { %>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"><%= field %></span>
+    <input type="text" ng-model="<%= resourceName %>.<%= field %>">
+  </label>
+  <% } ) %>
+
+  <br>
+
+  <div class="button-bar">
+    <button class="button button-positive">Save</button>
+    <button ng-click="cancel()" class="button button-calm">Cancel</button>
+  </div>
+
+</div>
