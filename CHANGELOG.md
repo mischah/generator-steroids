@@ -1,3 +1,7 @@
+#0.3.4 (2014-07-08)
+
+Added background color to the default generated `application.css` as to work around the Legacy Android [issue with Loading image showing beneath HTML pages without CSS](https://github.com/AppGyver/steroids/issues/381).
+
 #0.3.3 (2014-05-21)
 
 Default `config/application.coffee` has new configs added in iOS native runtime v3.1.6; Steroids.js no longer included with the default project template.
