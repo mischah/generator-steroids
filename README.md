@@ -13,7 +13,7 @@ A [Yeoman](http://yeoman.io) generator for [Steroids](https://github.com/appgyve
 Make sure you have [yo](https://github.com/yeoman/yo) installed:
 
 ```
-$ npm install yo -g
+$ npm install yo@1.0.5 -g
 ```
 
 Then, install the Steroids generator with
@@ -22,9 +22,15 @@ Then, install the Steroids generator with
 $ npm install generator-steroids -g
 ```
 
+or for local dev git clone it and then run 
+
+```
+$ npm link
+```
+
 ## Usage
 
-Create a new Steroids project with [Steroids npm](https://github.com/appgyver/steroids) and go to the folder. 
+Create a new Steroids project with [Steroids npm](https://github.com/appgyver/steroids) and go to the folder.
 
 For a resource:
 
