@@ -1,6 +1,6 @@
 {
   "name": "generator-steroids",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A Yeoman generator for Steroids",
   "keywords": [
     "yeoman-generator",
