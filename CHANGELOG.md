@@ -1,3 +1,7 @@
+#0.3.8 (2014-07-14)
+
+Added background color to default application.css and updated Steroids.js version to 3.5.x.
+
 #0.3.4 (2014-07-08)
 
 Added background color to the default generated `application.css` as to work around the Legacy Android [issue with Loading image showing beneath HTML pages without CSS](https://github.com/AppGyver/steroids/issues/381).
