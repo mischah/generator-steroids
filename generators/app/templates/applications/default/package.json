@@ -12,8 +12,5 @@
   "devDependencies": {
     "grunt-steroids": "0.x"
   },
-  "license": "none",
-  "engines": {
-    "steroids": "3.1.9"
-  }
+  "license": "none"
 }

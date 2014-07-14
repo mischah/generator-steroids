@@ -1,4 +1,4 @@
-#0.3.8 (2014-07-14)
+#0.3.9 (2014-07-14)
 
 Added background color to default application.css and updated Steroids.js version to 3.5.x.
 
