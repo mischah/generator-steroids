@@ -30,7 +30,7 @@ $ npm link
 
 ## Usage
 
-Create a new Steroids project with [Steroids npm](https://github.com/appgyver/steroids) and go to the folder.
+Create a new Steroids project with [Steroids CLI](https://github.com/appgyver/steroids) and go to the folder.
 
 For a resource:
 
