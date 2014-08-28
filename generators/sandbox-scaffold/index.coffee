@@ -16,18 +16,21 @@ module.exports = class SandboxScaffoldGenerator extends yeoman.generators.NamedB
     @on "end", ->
       @log.writeln(
         """
-        \nScaffold for SandboxDB resource #{@resourceName} created! Set the location of your app to
-
-          #{chalk.bold("\"http://localhost/views/#{@resourceName}/index.html\"")}
-
-        in #{chalk.bold("config/application.coffee")}.
-
-        Next up, we'll install the following Bower dependencies:
-
+        Installing Bower dependencies...
         """
       )
       bower = new Bower
-      bower.install([ 'angular#1.2.16', 'angular-touch#1.2.16', 'restangular#1.3.1', 'steroids-data#0.x' ], { save: true });
+      bower.install [ 'angular#1.2.16', 'angular-touch#1.2.16', 'restangular#1.3.1', 'steroids-data#0.x' ], { save: true }, =>
+        @log.writeln(
+          """
+          \nScaffold for SandboxDB resource #{@resourceName} created! Set the location of your app to
+
+            #{chalk.bold("\"http://localhost/views/#{@resourceName}/index.html\"")}
+
+          in #{chalk.bold("config/application.coffee")} to see it in action.
+
+          """
+        )
 
   app: ->
     @mkdir "app/controllers"
