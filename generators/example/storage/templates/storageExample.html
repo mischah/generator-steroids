@@ -16,6 +16,13 @@
 
     steroids.view.navigationBar.show("Storage Example");
 
+
+    /**
+     **
+     ** NOTICE: As of iOS and Android runtimes 3.5.0 onwards, the sqLite-plugin is no longer included as a ** a core plugin. To use it, build a custom Scanner with the plugin included
+     **
+     **/
+
     // Define our Database object
     var db = null;
 
@@ -25,8 +32,8 @@
     // Cordova is ready
     function onDeviceReady() {
       // Create a new database
-      db = window.openDatabase(
-        "Database",       // database name
+      db = window.sqlitePlugin.openDatabase(
+        "Database.db",       // database name
         "1.0",            // database version
         "Cordova Demo",   // database display name
         200000            // database size in bytes
@@ -78,6 +85,24 @@
       navigator.notification.alert("Error code: " + err.code + "; message: " + err.message, null, "Error processing SQL!");
     }
 
+    // Transaction success callback
+    function databaseSuccess() {
+      var status = document.querySelector("#status");
+      status.innerText = "Transaction succesfully completed!";
+    }
+
+    // Set up a rolling variable for multiple db entries
+    var id = 3;
+
+    function updateDB() {
+      db.transaction(insertRow, databaseError, databaseSuccess);
+    }
+
+    // Insert a new row into the database and increment id value
+    function insertRow(tx) {
+      tx.executeSql('INSERT INTO DEMO (id, data) VALUES (' + id++ + ' , "Dummy row")');
+    }
+
     </script>
   </head>
   <body class="content">
@@ -86,6 +111,7 @@
       <span id="status">Creating and populating a database...</span>
       <br><br>
       <button class="button button-block" id="query-button" onclick="runQuery()" >Run query</button>
+      <button class="button button-block" id="query-button" onclick="updateDB()" >Insert row</button>
 
     </div>
   </body>
