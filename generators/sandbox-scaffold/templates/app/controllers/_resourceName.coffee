@@ -6,6 +6,7 @@
   ($scope, <%= _.capitalize(resourceName) %>Resource)->
 
     $scope.<%= resourceName %>s = []
+    $scope.showSpinner = true
 
     # Helper function for opening new webviews
     $scope.open = (id)->
@@ -17,9 +18,11 @@
       steroids.modal.show webView
 
     fetchResources = ->
+      $scope.showSpinner = true
       <%= _.capitalize(resourceName) %>Resource.findAll().then (<%= resourceName %>s)->
         $scope.$apply ->
           $scope.<%= resourceName %>s = <%= resourceName %>s
+          $scope.showSpinner = false
 
     # Trigger data refresh when this view becomes visible
     steroids.data.reactive.whenVisible.onValue ->
@@ -35,17 +38,21 @@
     ($scope, <%= _.capitalize(resourceName) %>Resource)->
 
       $scope.<%= resourceName %> = {}
+      $scope.showSpinner = true
 
       # Fetch an object based on id
       fetchResource = ->
+        $scope.showSpinner = true
         <%= _.capitalize(resourceName) %>Resource.find(steroids.view.params.id).then (<%= resourceName %>)->
           $scope.$apply ->
             $scope.<%= resourceName %> = <%= resourceName %>
+            $scope.showSpinner = false
 
       steroids.data.reactive.whenVisible.onValue ->
         fetchResource()
 
       $scope.remove = (id)->
+        $scope.showSpinner = true
         <%= _.capitalize(resourceName) %>Resource.remove(id).then ->
           steroids.layers.pop()
 
@@ -65,13 +72,16 @@
     ($scope, <%= _.capitalize(resourceName) %>Resource)->
 
       $scope.<%= resourceName %> = {}
+      $scope.showSpinner = true
 
       # Fetch an object based on id from the database
       <%= _.capitalize(resourceName) %>Resource.find(steroids.view.params.id).then (<%= resourceName %>)->
         $scope.$apply ->
           $scope.<%= resourceName %> = <%= resourceName %>
+          $scope.showSpinner = false
 
       $scope.submitForm = ->
+        $scope.showSpinner = true
         <%= _.capitalize(resourceName) %>Resource.update($scope.<%= resourceName %>.id, $scope.<%= resourceName %>).then ->
           steroids.modal.hide()
 
@@ -92,6 +102,7 @@
       $scope.<%= resourceName %> = {}
 
       $scope.submitForm = ->
+        $scope.showSpinner = true
         <%= _.capitalize(resourceName) %>Resource.create($scope.<%= resourceName %>).then ->
           steroids.modal.hide()
 

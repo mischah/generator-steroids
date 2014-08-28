@@ -1,3 +1,4 @@
 <div ng-controller="EditCtrl" class="padding">
-  <form ng-submit="submitForm()" ng-include="'_form.html'"></form>
+  <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+  <form ng-hide="showSpinner" ng-submit="submitForm()" ng-include="'_form.html'"></form>
 </div>
