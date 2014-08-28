@@ -13,6 +13,7 @@
     <script src="/components/steroids-js/steroids.js"></script>
 
     <script>
+    steroids.view.navigationBar.show("Audio Example");
 
     // Wait for Cordova to load
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -104,14 +105,12 @@
   <body class="content">
     <div class="padding">
 
-      <h1>Audio Example</h1>
-
       <p>Audio position: <span id="audio_position">Not playing</span></p>
 
       <button class="button button-block" onclick="playAudio()">Play</button>
-      <br><br>
+      <br>
       <button class="button button-block" onclick="pauseAudio()">Pause</button>
-      <br><br>
+      <br>
       <button class="button button-block" onclick="stopAudio()">Stop</button>
 
     </div>
