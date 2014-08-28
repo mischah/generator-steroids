@@ -61,6 +61,11 @@
       navigator.notification.vibrate(500);
     }
 
+    function beep() {
+      // Number of times to repeat beep as parameter
+      navigator.notification.beep(2);
+    }
+
     </script>
   </head>
   <body class="content">
@@ -70,6 +75,7 @@
       <button class="button button-block" onclick="showConfirm()">Show confirm dialogue</button>
       <button class="button button-block" onclick="showPrompt()">Show prompt dialogue</button>
       <button class="button button-block" onclick="vibrate()">Vibrate the device</button>
+      <button class="button button-block" onclick="beep()">Play a sound alert</button>
 
     </div>
   </body>
