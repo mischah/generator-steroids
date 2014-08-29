@@ -20,7 +20,7 @@ module.exports = class SandboxScaffoldGenerator extends yeoman.generators.NamedB
         """
       )
       bower = new Bower
-      bower.install [ 'angular#1.2.16', 'angular-touch#1.2.16', 'restangular#1.3.1', 'steroids-data#0.x' ], { save: true }, =>
+      bower.install [ 'angular#1.2.23' ], { save: true }, =>
         @log.writeln(
           """
           \nScaffold for SandboxDB resource #{@resourceName} created! Set the location of your app to

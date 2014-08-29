@@ -1,4 +1,4 @@
-<%= resourceName %>App = angular.module("<%= resourceName %>App", ["<%= _.capitalize(resourceName) %>Model", "ngTouch"])
+<%= resourceName %>App = angular.module("<%= resourceName %>App", ["<%= _.capitalize(resourceName) %>Model"])
 
 <%= resourceName %>App.controller("IndexCtrl", [
   "$scope"
