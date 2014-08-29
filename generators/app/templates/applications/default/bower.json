@@ -12,7 +12,6 @@
     "tests"
   ],
   "dependencies": {
-    "steroids-js": "3.x",
-    "steroids-data": "0.8.4"
+    "steroids-js": "3.x"
   }
 }
