@@ -1,3 +1,14 @@
+#0.4.0 (2014-08-29)
+
+Updated example generators to run on current version of Steroids. Added minor tweaks to actual examples.
+
+Features:
+- Examples now work on current version of Steroids.
+- Minor tweaks to actual examples.
+
+Secret features:
+- Steroids Data scaffold generator added.
+
 #0.3.9 (2014-07-14)
 
 Added background color to default application.css and updated Steroids.js version to 3.5.x.
