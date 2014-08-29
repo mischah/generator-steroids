@@ -7,7 +7,7 @@ module.exports = class SteroidsGenerator extends yeoman.generators.Base
   constructor: ->
     super arguments...
 
-    @on 'error', ->
+    @on 'error', =>
       if !@folderName?
         @log.writeln(
           """
@@ -16,7 +16,7 @@ module.exports = class SteroidsGenerator extends yeoman.generators.Base
         )
         process.exit(1)
 
-    @on "end", ->
+    @on "end", =>
       @installDependencies
         skipInstall: @options['skip-install']
 
