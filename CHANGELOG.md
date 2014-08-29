@@ -1,3 +1,7 @@
+#0.4.2 (2014-08-29)
+
+Fixed a bug where Steroids Data scaffold generator included legacy JS library dependencies.
+
 #0.4.1 (2014-08-29)
 
 Fixed a bug where project creation would not install dependencies.
