@@ -1,3 +1,7 @@
+#0.4.1 (2014-08-29)
+
+Fixed a bug where project creation would not install dependencies.
+
 #0.4.0 (2014-08-29)
 
 Updated example generators to run on current version of Steroids. Added minor tweaks to actual examples.
