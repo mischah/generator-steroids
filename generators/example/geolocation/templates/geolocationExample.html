@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width">
     <title>Cordova Geolocation Example</title>
 
     <link rel="stylesheet" href="/vendor/ionic/css/ionic.css" />
@@ -11,6 +13,8 @@
     <script src="/components/steroids-js/steroids.js"></script>
 
     <script>
+
+    steroids.view.navigationBar.show("Geolocation Example");
 
     // Define our results DOM element object
     var resultsElem = null;
@@ -43,7 +47,6 @@
   </head>
   <body class="content">
     <div class="padding">
-      <h1>Geolocation Example</h1>
       <p id="geolocation-results">Waiting for geolocation data...</p>
     </div>
   </body>

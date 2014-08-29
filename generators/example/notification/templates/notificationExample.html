@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width">
     <title>Cordova Notification Example</title>
 
     <link rel="stylesheet" href="/vendor/ionic/css/ionic.css" />
@@ -11,6 +13,8 @@
     <script src="/components/steroids-js/steroids.js"></script>
 
     <script>
+
+    steroids.view.navigationBar.show("Notification Example");
 
     function alertDismissed() {
       console.log("Alert dismissed!");
@@ -57,17 +61,21 @@
       navigator.notification.vibrate(500);
     }
 
+    function beep() {
+      // Number of times to repeat beep as parameter
+      navigator.notification.beep(2);
+    }
+
     </script>
   </head>
   <body class="content">
     <div class="padding">
 
-      <h1>Notification Examples</h1>
-
-      <button class="button button-block" ontouchend="showAlert()">Show alert dialogue</button>
-      <button class="button button-block" ontouchend="showConfirm()">Show confirm dialogue</button>
-      <button class="button button-block" ontouchend="showPrompt()">Show prompt dialogue</button>
-      <button class="button button-block" ontouchend="vibrate()">Vibrate the device</button>
+      <button class="button button-block" onclick="showAlert()">Show alert dialogue</button>
+      <button class="button button-block" onclick="showConfirm()">Show confirm dialogue</button>
+      <button class="button button-block" onclick="showPrompt()">Show prompt dialogue</button>
+      <button class="button button-block" onclick="vibrate()">Vibrate the device</button>
+      <button class="button button-block" onclick="beep()">Play a sound alert</button>
 
     </div>
   </body>
