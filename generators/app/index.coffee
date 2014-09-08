@@ -12,7 +12,7 @@ template = (context) -> (contents) ->
 
 SteroidsGenerator = yeoman.generators.Base.extend(
   initializing: ->
-    @pkg = require("../package.json")
+    @pkg = require("../../package.json")
     @context = {}
     return
 
