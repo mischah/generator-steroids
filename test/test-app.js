@@ -12,7 +12,7 @@ describe('steroids:app', function () {
       .inDir(path.join(os.tmpdir(), './temp-test'))
       .withOptions({ 'skip-install': true })
       .withPrompt({
-        someOption: true
+        projectName: "testApp"
       })
       .on('end', done);
   });

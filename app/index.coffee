@@ -1,8 +1,10 @@
-"use strict"
 util = require("util")
 path = require("path")
 yeoman = require("yeoman-generator")
 yosay = require("yosay")
+
+fs = require "fs"
+
 SteroidsGenerator = yeoman.generators.Base.extend(
   initializing: ->
     @pkg = require("../package.json")
@@ -12,19 +14,25 @@ SteroidsGenerator = yeoman.generators.Base.extend(
     done = @async()
     
     # Have Yeoman greet the user.
-    @log yosay("Welcome to the exquisite Devroids generator!")
+    @log yosay("Welcome to the exquisite Steroids project generator!")
     prompts = [
-      type: "confirm"
-      name: "someOption"
-      message: "Would you like to enable this option?"
-      default: true
+      type: "input"
+      projectName: "projectName"
+      message: "What is the name for your new app?"
+      default: "mySteroidsApp"
     ]
-    @prompt prompts, ((props) ->
-      @someOption = props.someOption
+    @prompt prompts, (props) =>
+      @projectName = props.projectName
+      if fs.existsSync(@projectName)
+
+        @log.writeln(
+          """
+          #{chalk.red("ERROR:")} Directory #{@projectName} already exists. Remove it to continue.
+          """
+        )
+        process.exit(1)
+      @destinationRoot @projectName
       done()
-      return
-    ).bind(this)
-    return
 
   writing:
     app: ->
