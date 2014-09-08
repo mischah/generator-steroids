@@ -3,9 +3,8 @@ var util = require('util');
 var yeoman = require('yeoman-generator');
 
 
-var SteroidsGenerator = yeoman.generators.NamedBase.extend({
+var SteroidsGenerator = yeoman.generators.Base.extend({
   initializing: function () {
-    this.log('You called the steroids subgenerator with the argument ' + this.name + '.');
   },
 
   writing: function () {

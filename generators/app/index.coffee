@@ -10,11 +10,16 @@ mustache = require 'mustache'
 template = (context) -> (contents) ->
   mustache.render(contents, context)
 
-SteroidsGenerator = yeoman.generators.Base.extend(
+class SteroidsGenerator extends yeoman.generators.Base
+
+  constructor: ->
+    super
+
+    @composeWith 'steroids:common'
+  
   initializing: ->
     @pkg = require("../../package.json")
     @context = {}
-    return
 
   prompting: ->
     done = @async()
@@ -57,5 +62,5 @@ SteroidsGenerator = yeoman.generators.Base.extend(
   end: ->
     @installDependencies
       skipInstall: @options['skip-install']
-)
+
 module.exports = SteroidsGenerator
