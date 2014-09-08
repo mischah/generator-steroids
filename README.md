@@ -1,82 +1,47 @@
-# Steroids generator
+# generator-devroids [![Build Status](https://secure.travis-ci.org/Ezku/generator-devroids.png?branch=master)](https://travis-ci.org/Ezku/generator-devroids)
 
-A [Yeoman](http://yeoman.io) generator for [Steroids](https://github.com/appgyver/steroids).
+> [Yeoman](http://yeoman.io) generator
 
-### Available generators
 
-* `steroids:ng-resource` – generates an AngularJS-based resource using local data.
-* `steroids:example:<exampleName>` – Generates an example demonstrating a Steroids feature.
-* `steroids:tutorial:<tutorialName>` – Generates the Steroids tutorials.
+## Getting Started
 
-## Installation
+### What is Yeoman?
 
-Make sure you have [yo](https://github.com/yeoman/yo) installed:
+Trick question. It's not a thing. It's this guy:
 
-```
-$ npm install yo@1.0.5 -g
-```
+![](http://i.imgur.com/JHaAlBJ.png)
 
-Then, install the Steroids generator with
+Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
 
-```
-$ npm install generator-steroids -g
+Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+
+```bash
+npm install -g yo
 ```
 
-or for local dev git clone it and then run 
+### Yeoman Generators
 
-```
-$ npm link
-```
+Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-## Usage
+To install generator-devroids from npm, run:
 
-Create a new Steroids project with [Steroids CLI](https://github.com/appgyver/steroids) and go to the folder.
-
-For a resource:
-
-```
-yo steroids:<resource>
+```bash
+npm install -g generator-devroids
 ```
 
-and give your resource a name. The resource files will be created and Bower will install all required dependencies.
+Finally, initiate the generator:
 
-
-For an example resource:
-
-```
-yo steroids:example:<exampleName>
+```bash
+yo devroids
 ```
 
-Options:
-__exampleName__: name of the example to generate.
+### Getting To Know Yeoman
 
-Available examples:
-* accelerometer -- Access the device's accelerometer.
-* animation -- Using native animations without moving to another document (iOS-only).
-* audio -- Play back audio files through Cordova's Media API.
-* compass -- Access the device's compass.
-* device -- Access the device properties.
-* drumMachine -- Demonstrate Steroids Audio API via a kickin' drum machine.
-* geolocation -- Access the device's geolocation data.
-* modal -- Using the modal window.
-* notification -- Access native notifications.
-* preload -- Preload WebViews to have them available immediately.
-* storage -- Access Cordova's SQL Storage API.
+Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
 
-For a tutorial:
+If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
 
-```
-yo steroids:tutorial:<tutorialName>
-```
-
-Options:
-__tutorialName__: name of the tutorial to generate.
-
-Available tutorials:
-* begin -- The very basics of AppGyver Steroids, start here
-* steroids -- Basics of Steroids Native UI enhancements
-* controllers -- Basics of Controllers (requires the 'steroids' tutorial to be generated first)
 
 ## License
 
-[MIT License](http://en.wikipedia.org/wiki/MIT_License)
+MIT
