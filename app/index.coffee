@@ -45,7 +45,7 @@ SteroidsGenerator = yeoman.generators.Base.extend(
       @src.copy "gitignore", ".gitignore"
 
   end: ->
-    @installDependencies()
-    return
+    @installDependencies
+      skipInstall: @options['skip-install']
 )
 module.exports = SteroidsGenerator
