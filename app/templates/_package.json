@@ -1,5 +1,11 @@
 {
-  "name": "package",
+  "name": "<%= projectName %>",
   "version": "0.0.0",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "grunt-steroids": "0.x"
+  },
+  "engines": {
+    "steroids": "3.5.0"
+  }
 }
