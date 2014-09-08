@@ -32,12 +32,9 @@ SteroidsGenerator = yeoman.generators.Base.extend(
       @dest.mkdir "app/templates"
       @src.copy "_package.json", "package.json"
       @src.copy "_bower.json", "bower.json"
-      return
 
     projectfiles: ->
-      @src.copy "editorconfig", ".editorconfig"
-      @src.copy "jshintrc", ".jshintrc"
-      return
+      @src.copy "gitignore", ".gitignore"
 
   end: ->
     @installDependencies()
