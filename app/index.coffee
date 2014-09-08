@@ -4,10 +4,16 @@ yeoman = require("yeoman-generator")
 yosay = require("yosay")
 
 fs = require "fs"
+chalk = require "chalk"
+mustache = require 'mustache'
+
+template = (context) -> (contents) ->
+  mustache.render(contents, context)
 
 SteroidsGenerator = yeoman.generators.Base.extend(
   initializing: ->
     @pkg = require("../package.json")
+    @context = {}
     return
 
   prompting: ->
@@ -17,7 +23,7 @@ SteroidsGenerator = yeoman.generators.Base.extend(
     @log yosay("Welcome to the exquisite Steroids project generator!")
     prompts = [
       type: "input"
-      projectName: "projectName"
+      name: "projectName"
       message: "What is the name for your new app?"
       default: "mySteroidsApp"
     ]
@@ -32,14 +38,18 @@ SteroidsGenerator = yeoman.generators.Base.extend(
         )
         process.exit(1)
       @destinationRoot @projectName
+
+      @context = {
+        @projectName
+      }
+
       done()
 
   writing:
     app: ->
       @dest.mkdir "app"
-      @dest.mkdir "app/templates"
-      @src.copy "_package.json", "package.json"
-      @src.copy "_bower.json", "bower.json"
+      @src.copy "_package.json", "package.json", process: template @context
+      @src.copy "_bower.json", "bower.json", process: template @context
 
     projectfiles: ->
       @src.copy "gitignore", ".gitignore"
