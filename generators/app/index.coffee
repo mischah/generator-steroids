@@ -51,12 +51,14 @@ class SteroidsGenerator extends yeoman.generators.Base
       done()
 
   writing:
-    app: ->
-      @dest.mkdir "app"
-      @src.copy "_package.json", "package.json", process: template @context
-      @src.copy "_bower.json", "bower.json", process: template @context
+
+    steroidsProjectBase: ->
+      @dest.mkdir "config"
+      @dest.mkdir "www"
 
     projectfiles: ->
+      @src.copy "_package.json", "package.json", process: template @context
+      @src.copy "_bower.json", "bower.json", process: template @context
       @src.copy "gitignore", ".gitignore"
 
   end: ->
