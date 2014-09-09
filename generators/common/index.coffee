@@ -5,6 +5,6 @@ SteroidsGenerator = yeoman.generators.Base.extend(
   initializing: ->
 
   writing: ->
-    @src.copy "somefile.js", "somefile.js"
+    @src.copy "index.coffee", "app/common/index.coffee"
 )
 module.exports = SteroidsGenerator

@@ -16,7 +16,7 @@ describe('steroids:common', function () {
 
   it('creates files', function () {
     assert.file([
-      'somefile.js'
+      'app/common/index.coffee'
     ]);
   });
 });
