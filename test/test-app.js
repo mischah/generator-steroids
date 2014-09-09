@@ -9,7 +9,7 @@ var os = require('os');
 describe('steroids:app', function () {
   before(function (done) {
     var deps = [
-      [helpers.createDummyGenerator(), 'steroids:common']
+      [helpers.createDummyGenerator(), 'steroids:common'],
     ];
     helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
@@ -26,7 +26,6 @@ describe('steroids:app', function () {
       'bower.json',
       'package.json',
       '.gitignore',
-      'config',
       'www'
     ]);
   });

@@ -18,7 +18,8 @@
   },
   "files": [
     "generators/app",
-    "generators/common"
+    "generators/common",
+    "generators/application-config"
   ],
   "keywords": [
     "yeoman-generator"

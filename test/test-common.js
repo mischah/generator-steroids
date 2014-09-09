@@ -8,9 +8,13 @@ var os = require('os');
 
 describe('steroids:common', function () {
   before(function (done) {
+    var deps = [
+      [helpers.createDummyGenerator(), 'steroids:application-config']
+    ];
     helpers.run(path.join(__dirname, '../generators/common'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
-      .withArguments('name', '--force')
+      .withArguments('--force')
+      .withGenerators(deps)
       .on('end', done);
   });
 
