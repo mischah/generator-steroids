@@ -16,7 +16,11 @@ describe('steroids:common', function () {
 
   it('creates files', function () {
     assert.file([
-      'app/common/index.coffee'
+      'app/common/index.coffee',
+      'app/common/assets/loading.html',
+      'app/common/stylesheets/application.scss',
+      'app/common/views/getting-started.html',
+      'app/common/views/layout.html'
     ]);
   });
 });
