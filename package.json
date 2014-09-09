@@ -19,7 +19,8 @@
   "files": [
     "generators/app",
     "generators/common",
-    "generators/application-config"
+    "generators/application-config",
+    "generators/platform-config"
   ],
   "keywords": [
     "yeoman-generator"
