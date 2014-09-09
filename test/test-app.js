@@ -26,6 +26,7 @@ describe('steroids:app', function () {
       'bower.json',
       'package.json',
       '.gitignore',
+      'Gruntfile.js',
       'www'
     ]);
   });
