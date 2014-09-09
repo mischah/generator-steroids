@@ -1,16 +1,13 @@
 util = require("util")
 path = require("path")
-yeoman = require("yeoman-generator")
 yosay = require("yosay")
 
 fs = require "fs"
 chalk = require "chalk"
-mustache = require 'mustache'
 
-template = (context) -> (contents) ->
-  mustache.render(contents, context)
+SteroidsGenerator = require '../SteroidsGenerator'
 
-class SteroidsGenerator extends yeoman.generators.Base
+module.exports = class SteroidsAppGenerator extends SteroidsGenerator
 
   constructor: ->
     super
@@ -19,7 +16,6 @@ class SteroidsGenerator extends yeoman.generators.Base
   
   initializing: ->
     @pkg = require("../../package.json")
-    @context = {}
 
   prompting: ->
     done = @async()
@@ -44,25 +40,22 @@ class SteroidsGenerator extends yeoman.generators.Base
         process.exit(1)
       @destinationRoot @projectName
 
-      @context = {
-        @projectName
-      }
+      process.chdir @destinationRoot()
+
+      @context.projectName = @projectName
 
       done()
 
   writing:
 
     steroidsProjectBase: ->
-      @dest.mkdir "config"
       @dest.mkdir "www"
 
     projectfiles: ->
-      @src.copy "_package.json", "package.json", process: template @context
-      @src.copy "_bower.json", "bower.json", process: template @context
+      @src.copy "_package.json", "package.json", process: @template
+      @src.copy "_bower.json", "bower.json", process: @template
       @src.copy "gitignore", ".gitignore"
 
   end: ->
     @installDependencies
       skipInstall: @options['skip-install']
-
-module.exports = SteroidsGenerator
