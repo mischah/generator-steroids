@@ -13,6 +13,7 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
     super
 
     @composeWith 'steroids:common'
+    @composeWith 'steroids:platform-config'
   
   initializing: ->
     @pkg = require("../../package.json")
