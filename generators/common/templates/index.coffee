@@ -1,4 +1,4 @@
-angular.module 'app', [
+angular.module 'common', [
   # Declare any common dependencies here
   'supersonic'
 ]
