@@ -10,6 +10,7 @@ describe('steroids:app', function () {
   before(function (done) {
     var deps = [
       [helpers.createDummyGenerator(), 'steroids:common'],
+      [helpers.createDummyGenerator(), 'steroids:platform-config']
     ];
     helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
