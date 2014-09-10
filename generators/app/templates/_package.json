@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "grunt-steroids": "0.x"
+    "grunt-steroids": "git+https://jepjep:e072ec18c4b0a3724637b731e345f2009ffe87f1@github.com/appgyver/grunt-devroids.git"
   },
   "engines": {
     "steroids": "3.5.0"

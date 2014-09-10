@@ -14,13 +14,13 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
 
     @composeWith 'steroids:common'
     @composeWith 'steroids:platform-config'
-  
+
   initializing: ->
     @pkg = require("../../package.json")
 
   prompting: ->
     done = @async()
-    
+
     # Have Yeoman greet the user.
     @log yosay("Welcome to the exquisite Steroids project generator!")
     prompts = [
