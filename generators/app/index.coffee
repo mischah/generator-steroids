@@ -51,6 +51,7 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
 
     steroidsProjectBase: ->
       @dest.mkdir "www"
+      @dest.mkdir "logs"
 
     projectfiles: ->
       @src.copy "_package.json", "package.json", process: @template
