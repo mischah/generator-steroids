@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Yeoman generator",
   "license": "MIT",
-  "main": "app/index.js",
+  "main": "generators/app/index.js",
   "repository": "AppGyver/generator-steroids",
   "author": {
     "name": "Eevert Saukkokoski",
@@ -16,12 +16,6 @@
   "scripts": {
     "test": "mocha"
   },
-  "files": [
-    "generators/app",
-    "generators/common",
-    "generators/application-config",
-    "generators/platform-config"
-  ],
   "keywords": [
     "yeoman-generator"
   ],
