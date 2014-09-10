@@ -24,7 +24,9 @@ describe('steroids:common', function () {
       'app/common/assets/loading.html',
       'app/common/stylesheets/application.scss',
       'app/common/views/getting-started.html',
-      'app/common/views/layout.html'
+      'app/common/views/layout.html',
+      'app/common/views/start-the-tutorial.html',
+      'app/common/views/using-the-scanner.html'
     ]);
   });
 });
