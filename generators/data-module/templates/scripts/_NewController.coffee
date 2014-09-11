@@ -1,6 +1,6 @@
 angular
   .module('<%= moduleName %>')
-  .controller("NewCtrl", ($scope, <%= _.capitalize(resourceName) %>Resource)->
+  .controller("NewController", ($scope, <%= _.capitalize(resourceName) %>Resource)->
 
     $scope.<%= resourceName %> = {}
 

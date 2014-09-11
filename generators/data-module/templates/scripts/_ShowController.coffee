@@ -1,6 +1,6 @@
 angular
   .module('<%= moduleName %>')
-  .controller("ShowCtrl", ($scope, <%= _.capitalize(resourceName) %>Resource)->
+  .controller("ShowController", ($scope, <%= _.capitalize(resourceName) %>Resource)->
 
       $scope.<%= resourceName %> = {}
       $scope.showSpinner = true
