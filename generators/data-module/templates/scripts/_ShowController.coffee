@@ -1,9 +1,6 @@
-<%= resourceName %>App = angular.module("<%= resourceName %>App", ["<%= _.capitalize(resourceName) %>Model"])
-
-<%= resourceName %>App.controller("ShowCtrl", [
-    "$scope"
-    "<%= _.capitalize(resourceName) %>Resource"
-    ($scope, <%= _.capitalize(resourceName) %>Resource)->
+angular
+  .module('<%= moduleName %>')
+  .controller("ShowCtrl", ($scope, <%= _.capitalize(resourceName) %>Resource)->
 
       $scope.<%= resourceName %> = {}
       $scope.showSpinner = true
@@ -32,6 +29,4 @@
       steroids.view.navigationBar.show "Show <%= _.capitalize(resourceName) %>"
       steroids.view.setBackgroundColor "#FFFFFF"
 
-
-
-  ])
+  )

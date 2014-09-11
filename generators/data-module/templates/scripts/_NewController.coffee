@@ -1,21 +1,18 @@
-<%= resourceName %>App = angular.module("<%= resourceName %>App", ["<%= _.capitalize(resourceName) %>Model"])
+angular
+  .module('<%= moduleName %>')
+  .controller("NewCtrl", ($scope, <%= _.capitalize(resourceName) %>Resource)->
 
-<%= resourceName %>App.controller("NewCtrl", [
-    "$scope"
-    "<%= _.capitalize(resourceName) %>Resource"
-    ($scope, <%= _.capitalize(resourceName) %>Resource)->
+    $scope.<%= resourceName %> = {}
 
-      $scope.<%= resourceName %> = {}
-
-      $scope.submitForm = ->
-        $scope.showSpinner = true
-        <%= _.capitalize(resourceName) %>Resource.create($scope.<%= resourceName %>).then ->
-          steroids.modal.hide()
-
-      $scope.cancel = ->
+    $scope.submitForm = ->
+      $scope.showSpinner = true
+      <%= _.capitalize(resourceName) %>Resource.create($scope.<%= resourceName %>).then ->
         steroids.modal.hide()
 
-      # Native navigation
-      steroids.view.navigationBar.show "New <%= _.capitalize(resourceName) %>"
-      steroids.view.setBackgroundColor "#FFFFFF"
-  ])
+    $scope.cancel = ->
+      steroids.modal.hide()
+
+    # Native navigation
+    steroids.view.navigationBar.show "New <%= _.capitalize(resourceName) %>"
+    steroids.view.setBackgroundColor "#FFFFFF"
+  )
