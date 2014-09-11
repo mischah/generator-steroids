@@ -1,6 +1,3 @@
-module = angular.module('<%= _.capitalize(resourceName) %>Model', []);
-
-Resource = steroids.data.resource '<%= resourceName %>'
-
-module.constant('<%= _.capitalize(resourceName) %>Resource', Resource)
-
+angular
+  .module('<%= moduleName %>')
+  .constant('<%= _.capitalize(resourceName) %>Resource', steroids.data.resource '<%= resourceName %>')
