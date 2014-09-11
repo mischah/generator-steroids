@@ -59,3 +59,12 @@ module.exports =
         moduleName: moduleName || 'myModule'
       }
     }, done
+
+  dataModule: ({ targetDirectory, moduleName, resourceName, fields }, done) ->
+    runGenerator 'steroids:data-module' {
+      targetDirectory
+      answers: {
+        moduleName: moduleName || 'myDataModule'
+      }
+      args: [resourceName || 'myResource'].concat (fields || [])
+    }, done
