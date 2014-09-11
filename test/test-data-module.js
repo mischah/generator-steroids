@@ -11,6 +11,7 @@ describe('steroids:data-module', function () {
     helpers.run(path.join(__dirname, '../generators/data-module'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
       .withArguments([
+        'foo',
         'field_one',
         'field_two'
       ])
@@ -27,7 +28,7 @@ describe('steroids:data-module', function () {
       'app/test/scripts/NewController.coffee',
       'app/test/scripts/ShowController.coffee',
       'app/test/scripts/EditController.coffee',
-      'app/test/scripts/TestModel.coffee',
+      'app/test/scripts/FooModel.coffee',
       'app/test/views/index.html',
       'app/test/views/new.html',
       'app/test/views/show.html',
