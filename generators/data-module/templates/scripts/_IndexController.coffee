@@ -7,11 +7,11 @@ angular
 
     # Helper function for opening new webviews
     $scope.open = (id)->
-      webView = new steroids.views.WebView "/views/<%= resourceName %>/show.html?id=#{id}"
+      webView = new steroids.views.WebView "/app/<%= moduleName %>/show.html?id=#{id}"
       steroids.layers.push webView
 
     $scope.showModal = ->
-      webView = new steroids.views.WebView "/views/<%= resourceName %>/new.html"
+      webView = new steroids.views.WebView "/app/<%= moduleName %>/new.html"
       steroids.modal.show webView
 
     fetchResources = ->

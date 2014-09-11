@@ -22,7 +22,7 @@ angular
           steroids.layers.pop()
 
       $scope.showEditModal = (id)->
-        webView = new steroids.views.WebView "/views/<%= resourceName %>/edit.html?id=#{id}"
+        webView = new steroids.views.WebView "/app/<%= moduleName %>/edit.html?id=#{id}"
         steroids.modal.show webView
 
       # Native navigation
