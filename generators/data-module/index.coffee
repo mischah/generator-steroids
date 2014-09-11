@@ -62,6 +62,7 @@ module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
   dependencies: ->
     @addBowerDependencies {
       angular: '1.2.23'
+      "steroids-data": '3.5.0'
     }
 
   end: ->
