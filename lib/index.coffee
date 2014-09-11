@@ -27,8 +27,7 @@ createGenerator = (namespace, {args, options, answers}) ->
     generator
 
 runGenerator = (namespace, {targetDirectory, args, options, answers}, done) ->
-    currentDirectory = process.cwd()
-    process.chdir targetDirectory || currentDirectory
+    process.chdir process.cwd() || currentDirectory
 
     generator = createGenerator namespace, {
       args
@@ -37,7 +36,6 @@ runGenerator = (namespace, {targetDirectory, args, options, answers}, done) ->
     }
 
     generator.once 'end', ->
-      process.chdir currentDirectory
       done?()
     
     generator.run()
