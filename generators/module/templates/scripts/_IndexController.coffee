@@ -1,4 +1,4 @@
 angular
   .module('{{ moduleName }}')
-  .controller 'IndexController', ($scope) ->
+  .controller 'IndexController', ($scope, supersonic) ->
     # Controller functionality here
