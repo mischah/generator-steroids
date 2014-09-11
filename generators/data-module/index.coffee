@@ -11,16 +11,20 @@ strings = require "underscore.string"
 SteroidsGenerator = require '../SteroidsGenerator'
 
 module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
-  constructor: (fieldNames) ->
+  constructor: ([resourceName, fieldNames...]) ->
     super
 
-    @context.fields = fieldNames
+    @resourceName = @context.resourceName = resourceName
+    @fieldNames = @context.fields = fieldNames
 
   prompting: ->
     done = @async()
 
     # Have Yeoman greet the user.
-    @log yosay("Welcome to the exquisite Steroids Data module generator!")
+    @log yosay("You're about to create a module for your #{@resourceName} resource!")
+    @log "#{chalk.green "Resource name:"} #{chalk.gray @resourceName}"
+    @log "#{chalk.green "Fields:"} #{chalk.gray @fieldNames.join ', '}"
+
     prompts = [
       type: "input"
       name: "moduleName"
@@ -28,7 +32,7 @@ module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
       default: "myDataModule"
     ]
     @prompt prompts, (props) =>
-      @moduleName = @context.resourceName = @context.moduleName = props.moduleName
+      @moduleName = @context.moduleName = props.moduleName
       done()
 
   template: (contents) ->
@@ -44,7 +48,7 @@ module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
     @src.copy "scripts/_ShowController.coffee", "app/#{@moduleName}/scripts/ShowController.coffee", process: @template
     @src.copy "scripts/_EditController.coffee", "app/#{@moduleName}/scripts/EditController.coffee", process: @template
 
-    @src.copy "scripts/_Model.coffee", "app/#{@moduleName}/scripts/#{strings.capitalize @moduleName}Model.coffee", process: @template
+    @src.copy "scripts/_Model.coffee", "app/#{@moduleName}/scripts/#{strings.capitalize @resourceName}Model.coffee", process: @template
 
     @src.copy "views/layout.html", "app/#{@moduleName}/views/layout.html"
 
