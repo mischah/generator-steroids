@@ -7,13 +7,14 @@ availableGenerators = [
   'common'
   'module'
   'platform-config'
+  'data-module'
 ]
 
 createEnvironment = ->
   env = yeoman()
 
-  for generator in availableGenerators
-    env.register "#{__dirname}/../generators/#{generator}", "steroids:#{generator}"
+  for namespace in availableGenerators
+    env.register "#{__dirname}/../generators/#{namespace}", "steroids:#{namespace}"
 
   env
 
@@ -32,7 +33,7 @@ runGenerator = (namespace, {targetDirectory, args, options, answers}, done) ->
 
   process.chdir process.cwd() || currentDirectory
 
-  generator = createGenerator namespace, {
+  generator = createGenerator "steroids:#{namespace}", {
     args
     options
     answers
@@ -45,7 +46,7 @@ runGenerator = (namespace, {targetDirectory, args, options, answers}, done) ->
 
 module.exports =
   app: ({projectName, targetDirectory, skipInstall}, done) ->
-    runGenerator 'steroids:app', {
+    runGenerator 'app', {
       targetDirectory
       options: {
         'skip-install': skipInstall || false
@@ -56,7 +57,7 @@ module.exports =
     }, done
 
   module: ({ moduleName, targetDirectory }, done) ->
-    runGenerator 'steroids:module', {
+    runGenerator 'module', {
       targetDirectory
       answers: {
         moduleName: moduleName || 'myModule'
@@ -64,7 +65,7 @@ module.exports =
     }, done
 
   dataModule: ({ targetDirectory, moduleName, resourceName, fields }, done) ->
-    runGenerator 'steroids:data-module' {
+    runGenerator 'data-module', {
       targetDirectory
       answers: {
         moduleName: moduleName || 'myDataModule'
