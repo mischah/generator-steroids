@@ -1,18 +1,18 @@
 yeoman = require 'yeoman-generator'
 helpers = yeoman.test
 
+availableGenerators = [
+  'app'
+  'application-config'
+  'common'
+  'module'
+  'platform-config'
+]
+
 createEnvironment = ->
   env = yeoman()
 
-  generators = [
-    'app'
-    'application-config'
-    'common'
-    'module'
-    'platform-config'
-  ]
-
-  for generator in generators
+  for generator in availableGenerators
     env.register "#{__dirname}/../generators/#{generator}", "steroids:#{generator}"
 
   env
@@ -27,18 +27,21 @@ createGenerator = (namespace, {args, options, answers}) ->
     generator
 
 runGenerator = (namespace, {targetDirectory, args, options, answers}, done) ->
-    process.chdir process.cwd() || currentDirectory
+  if not (namespace in availableGenerators)
+    throw new Error "Are you sure #{namespace} is a steroids generator? Try one of #{availableGenerators.join ', '}."
 
-    generator = createGenerator namespace, {
-      args
-      options
-      answers
-    }
+  process.chdir process.cwd() || currentDirectory
 
-    generator.once 'end', ->
-      done?()
-    
-    generator.run()
+  generator = createGenerator namespace, {
+    args
+    options
+    answers
+  }
+
+  generator.once 'end', ->
+    done?()
+  
+  generator.run()
 
 module.exports =
   app: ({projectName, targetDirectory, skipInstall}, done) ->
