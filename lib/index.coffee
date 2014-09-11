@@ -26,28 +26,38 @@ createGenerator = (namespace, {args, options, answers}) ->
 
     generator
 
+runGenerator = (namespace, {targetDirectory, args, options, answers}, done) ->
+    currentDirectory = process.cwd()
+    process.chdir targetDirectory || currentDirectory
+
+    generator = createGenerator namespace, {
+      args
+      options
+      answers
+    }
+
+    generator.once 'end', ->
+      process.chdir currentDirectory
+      done?()
+    
+    generator.run()
+
 module.exports =
   app: ({projectName, targetDirectory, skipInstall}, done) ->
-    process.chdir targetDirectory || process.cwd()
-
-    generator = createGenerator 'steroids:app',
+    runGenerator 'steroids:app', {
+      targetDirectory
       options: {
         'skip-install': skipInstall || false
       }
       answers: {
         projectName: projectName || 'mySteroidsApp'
       }
-
-    generator.once 'end', done || (->)
-    generator.run()
+    }, done
 
   module: ({ moduleName, targetDirectory }, done) ->
-    process.chdir targetDirectory || process.cwd()
-
-    generator = createGenerator 'steroids:module',
+    runGenerator 'steroids:module', {
+      targetDirectory
       answers: {
         moduleName: moduleName || 'myModule'
       }
-
-    generator.once 'end', done || (->)
-    generator.run()
+    }, done
