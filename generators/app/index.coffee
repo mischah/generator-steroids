@@ -57,7 +57,7 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
       @src.copy "_package.json", "package.json", process: @template
       @src.copy "_bower.json", "bower.json", process: @template
       @src.copy "gitignore", ".gitignore"
-      @src.copy "Gruntfile.js", "Gruntfile.js"
+      @src.copy "Gruntfile.coffee", "Gruntfile.coffee"
 
   end: ->
     @installDependencies

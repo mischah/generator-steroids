@@ -8,6 +8,7 @@ createEnvironment = ->
     'app'
     'application-config'
     'common'
+    'module'
     'platform-config'
   ]
 
@@ -35,6 +36,17 @@ module.exports =
       }
       answers: {
         projectName: projectName || 'mySteroidsApp'
+      }
+
+    generator.once 'end', done || (->)
+    generator.run()
+
+  module: ({ moduleName, targetDirectory }, done) ->
+    process.chdir targetDirectory || process.cwd()
+
+    generator = createGenerator 'steroids:module',
+      answers: {
+        moduleName: moduleName || 'myModule'
       }
 
     generator.once 'end', done || (->)
