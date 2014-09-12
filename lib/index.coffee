@@ -1,19 +1,20 @@
 yeoman = require 'yeoman-generator'
 helpers = yeoman.test
 
+availableGenerators = [
+  'app'
+  'application-config'
+  'common'
+  'module'
+  'platform-config'
+  'data-module'
+]
+
 createEnvironment = ->
   env = yeoman()
 
-  generators = [
-    'app'
-    'application-config'
-    'common'
-    'module'
-    'platform-config'
-  ]
-
-  for generator in generators
-    env.register "#{__dirname}/../generators/#{generator}", "steroids:#{generator}"
+  for namespace in availableGenerators
+    env.register "#{__dirname}/../generators/#{namespace}", "steroids:#{namespace}"
 
   env
 
@@ -26,28 +27,48 @@ createGenerator = (namespace, {args, options, answers}) ->
 
     generator
 
+runGenerator = (namespace, {targetDirectory, args, options, answers}, done) ->
+  if not (namespace in availableGenerators)
+    throw new Error "Are you sure #{namespace} is a steroids generator? Try one of #{availableGenerators.join ', '}."
+
+  process.chdir process.cwd() || currentDirectory
+
+  generator = createGenerator "steroids:#{namespace}", {
+    args
+    options
+    answers
+  }
+
+  generator.once 'end', ->
+    done?()
+  
+  generator.run()
+
 module.exports =
   app: ({projectName, targetDirectory, skipInstall}, done) ->
-    process.chdir targetDirectory || process.cwd()
-
-    generator = createGenerator 'steroids:app',
+    runGenerator 'app', {
+      targetDirectory
       options: {
         'skip-install': skipInstall || false
       }
       answers: {
         projectName: projectName || 'mySteroidsApp'
       }
-
-    generator.once 'end', done || (->)
-    generator.run()
+    }, done
 
   module: ({ moduleName, targetDirectory }, done) ->
-    process.chdir targetDirectory || process.cwd()
-
-    generator = createGenerator 'steroids:module',
+    runGenerator 'module', {
+      targetDirectory
       answers: {
         moduleName: moduleName || 'myModule'
       }
+    }, done
 
-    generator.once 'end', done || (->)
-    generator.run()
+  dataModule: ({ targetDirectory, moduleName, resourceName, fields }, done) ->
+    runGenerator 'data-module', {
+      targetDirectory
+      answers: {
+        moduleName: moduleName || 'myDataModule'
+      }
+      args: [resourceName || 'myResource'].concat (fields || [])
+    }, done
