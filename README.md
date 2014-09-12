@@ -1,4 +1,4 @@
-# generator-devroids [![Build Status](https://secure.travis-ci.org/Ezku/generator-devroids.png?branch=master)](https://travis-ci.org/Ezku/generator-devroids)
+# generator-devroids [![Build Status](https://magnum.travis-ci.com/AppGyver/generator-devroids.svg?token=gEta3f5dAsub2yyMTo61)](https://magnum.travis-ci.com/AppGyver/generator-devroids)
 
 > [Yeoman](http://yeoman.io) generator
 
