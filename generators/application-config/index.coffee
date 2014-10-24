@@ -17,6 +17,7 @@ module.exports = class ApplicationConfigGenerator extends SteroidsGenerator
       # App name needs to be late bound because the working directory is
       # changed on-the-fly after the app generator has been initialized
       @context.appname = @determineAppname()
-      
+
       @dest.mkdir 'config'
-      @src.copy "_application.coffee", "config/application.coffee", process: @template
+      @src.copy "_app.coffee", "config/app.coffee", process: @template
+      @src.copy "_structure.coffee", "config/structure.coffee", process: @template

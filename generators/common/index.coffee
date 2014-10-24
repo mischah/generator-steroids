@@ -15,6 +15,8 @@ module.exports = class CommonModuleGenerator extends SteroidsGenerator
     common: ->
       @src.copy "index.coffee", "app/common/index.coffee"
       @src.copy "assets/loading.html", "app/common/assets/loading.html"
+      @src.copy "assets/icons/home.svg", "app/common/assets/icons/home.svg"
+      @src.copy "assets/icons/google.svg", "app/common/assets/icons/google.svg"
       @src.copy "stylesheets/application.scss", "app/common/stylesheets/application.scss"
       @src.copy "views/getting-started.html", "app/common/views/getting-started.html"
       @src.copy "views/start-the-tutorial.html", "app/common/views/start-the-tutorial.html"

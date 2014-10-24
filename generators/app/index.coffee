@@ -13,7 +13,6 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
     super
 
     @composeWith 'steroids:common'
-    @composeWith 'steroids:platform-config'
 
   initializing: ->
     @pkg = require("../../package.json")
@@ -50,7 +49,6 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
   writing:
 
     steroidsProjectBase: ->
-      @dest.mkdir "www"
       @dest.mkdir "logs"
 
     projectfiles: ->

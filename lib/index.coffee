@@ -6,7 +6,6 @@ availableGenerators = [
   'application-config'
   'common'
   'module'
-  'platform-config'
   'data-module'
 ]
 
@@ -41,7 +40,7 @@ runGenerator = (namespace, {targetDirectory, args, options, answers}, done) ->
 
   generator.once 'end', ->
     done?()
-  
+
   generator.run()
 
 module.exports =
