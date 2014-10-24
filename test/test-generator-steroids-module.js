@@ -20,8 +20,7 @@ describe('generator-steroids.app', function () {
     // Sanity tests to see if the generator actually ran
     assert.file([
       'app',
-      'config',
-      'www'
+      'config'
     ]);
   });
 });

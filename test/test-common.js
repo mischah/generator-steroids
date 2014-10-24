@@ -22,6 +22,8 @@ describe('steroids:common', function () {
     assert.file([
       'app/common/index.coffee',
       'app/common/assets/loading.html',
+      'app/common/assets/icons/home.svg',
+      'app/common/assets/icons/google.svg',
       'app/common/stylesheets/application.scss',
       'app/common/views/getting-started.html',
       'app/common/views/layout.html',

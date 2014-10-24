@@ -16,7 +16,8 @@ describe('steroids:application-config', function () {
 
   it('creates files', function () {
     assert.file([
-      'config/application.coffee'
+      'config/app.coffee',
+      'config/structure.coffee'
     ]);
   });
 });

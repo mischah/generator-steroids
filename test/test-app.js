@@ -28,7 +28,6 @@ describe('steroids:app', function () {
       'package.json',
       '.gitignore',
       'Gruntfile.coffee',
-      'www',
       'logs'
     ]);
   });
