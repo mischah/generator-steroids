@@ -19,9 +19,9 @@ module.exports =
       location: "common#getting-started"
     }
     {
-      title: "Internet"
-      id: "internet"
+      title: "Settings"
+      id: "settings"
       icon: "icons/google.svg"
-      location: "http://www.google.com"
+      location: "common#settings-mock"
     }
   ]
