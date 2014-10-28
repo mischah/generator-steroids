@@ -1,13 +1,3 @@
-/**
-  *  PLEASE NOTE: Native UI CSS styling is still in beta and we are still
-  *               changing it around and creating the possibility to apply
-  *               different styles to Android and iOS.
-  *
-  *               Please follow https://github.com/AppGyver/steroids/issues/558
-  **/
-
-
-
 /**************************************
  *  Navigation Bar
  *************************************/
@@ -16,6 +6,8 @@
 navigation-bar {
   background-color: #00B5FF;
   color: #ffffff;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 /* Sets style for the title element on navbar. */
@@ -26,9 +18,11 @@ navigation-bar title {
 }
 
 /* Style for navbar buttons (not back button) */
-navigation-bar button {
+navigation-bar button, navigation-bar back-bar-button {
   color: #ffffff;
   font-weight: medium;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 
