@@ -41,13 +41,13 @@ module.exports =
   #     stretchDrawer: true
   #     widthOfLayerInPixels: 0
 
-  # preloads: [
-  #   {
-  #     id: "settings"
-  #     location: "settings#index"
-  #   }
-  #   {
-  #     id: "google"
-  #     location: "http://www.google.com"
-  #   }
-  # ]
+  preloads: [
+    {
+      id: "tutorial-view"
+      location: "common#start-the-tutorial"
+    }
+    {
+      id: "scanner-view"
+      location: "common#using-the-scanner"
+    }
+  ]
