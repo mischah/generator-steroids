@@ -21,13 +21,6 @@ steroids.config.location = "http://localhost/<%= startView %>"
 #   }
 # ]
 
-# steroids.config.tabBar.tintColor = "#000000"
-# steroids.config.tabBar.tabTitleColor = "#00aeef"
-# steroids.config.tabBar.selectedTabTintColor = "#ffffff"
-# steroids.config.tabBar.selectedTabBackgroundImage = "icons/pill@2x.png"
-
-# steroids.config.tabBar.backgroundImage = ""
-
 # ## Preloads
 # steroids.config.preloads = [
 #   {
@@ -60,17 +53,6 @@ steroids.config.location = "http://localhost/<%= startView %>"
 # steroids.config.initialView =
 #   id: "initialView"
 #   location: "http://localhost/initialView.html"
-
-# ## Navigation Bar
-steroids.config.navigationBar.tintColor = "#00aeef"
-steroids.config.navigationBar.titleColor = "#ffffff"
-steroids.config.navigationBar.buttonTintColor = "#ffffff"
-
-# steroids.config.navigationBar.borderColor = "#000000"
-# steroids.config.navigationBar.borderSize = 2
-
-# steroids.config.navigationBar.landscape.backgroundImage = ""
-# steroids.config.navigationBar.portrait.backgroundImage = ""
 
 # ## Android Loading Screen
 steroids.config.loadingScreen.tintColor = "#262626"

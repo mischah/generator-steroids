@@ -22,7 +22,7 @@ Then, install the Steroids generator with
 $ npm install generator-steroids -g
 ```
 
-or for local dev git clone it and then run 
+or for local dev git clone it and then run
 
 ```
 $ npm link

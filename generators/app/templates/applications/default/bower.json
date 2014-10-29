@@ -12,6 +12,7 @@
     "tests"
   ],
   "dependencies": {
-    "steroids-js": "3.x"
+    "steroids-js": "3.x",
+    "ionic": "driftyco/ionic-bower#v1.0.0-beta.13"
   }
 }

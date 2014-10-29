@@ -1,3 +1,7 @@
+#0.4.3 (2014-10-10)
+
+Added `/www/native-styles/default.css` with default options for Native UI styling with Pixate.
+
 #0.4.2 (2014-08-29)
 
 Fixed a bug where Steroids Data scaffold generator included legacy JS library dependencies.
