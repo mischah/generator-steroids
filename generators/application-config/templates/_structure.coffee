@@ -1,5 +1,22 @@
 module.exports =
 
+  tabs: [
+    {
+      title: "Index"
+      id: "index"
+      location: "common#getting-started"
+    }
+    {
+      title: "Settings"
+      id: "settings"
+      location: "common#settings-mock"
+    }
+  ]
+
+  # For an app with a single view, remove the tabs object and uncomment below.
+  # rootView:
+  #   location: "common#getting-started"
+
   preloads: [
     {
       id: "tutorial-view"
@@ -8,20 +25,5 @@ module.exports =
     {
       id: "scanner-view"
       location: "common#using-the-scanner"
-    }
-  ]
-
-  tabs: [
-    {
-      title: "Index"
-      id: "index"
-      icon: "icons/home.svg"
-      location: "common#getting-started"
-    }
-    {
-      title: "Settings"
-      id: "settings"
-      icon: "icons/google.svg"
-      location: "common#settings-mock"
     }
   ]

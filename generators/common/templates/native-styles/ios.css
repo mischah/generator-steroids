@@ -39,15 +39,12 @@ tab-bar tab-bar-item {
 
 tab-bar tab-bar-item:selected {
   color: #1596f7;
-  background-color: #F2F2F2; /* Android only */
 }
 
-/* Vertical separator between tab items (Android Only) */
-tab-bar divider {
-  background-color: #D8D8D8;
+tab-bar-item#settings {
+  background-image: url(icons/cog.svg);
 }
 
-/* Tab Bar top marker (Android Only) */
-tab-bar tab-bar-item marker-top:selected {
-  background-color: #1596f7;
+tab-bar-item#index {
+  background-image: url(icons/home.svg);
 }
