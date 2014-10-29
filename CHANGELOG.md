@@ -1,3 +1,11 @@
+#0.4.4 (2014-10-29)
+
+Features:
+- `android.css` and `ios.css` added to `/www/native-styles/` folder. `default.css` will be deprecated and removed after iOS native runtime v4.0.0 is released.
+- Added tab id's to default `application.coffee`.
+- Changed our Ionic dependency to be from bower instead of the previous including it from `/vendor`
+- Added `AutoHideSplashScreen` to `config.android.xml`.
+
 #0.4.3 (2014-10-10)
 
 Added `/www/native-styles/default.css` with default options for Native UI styling with Pixate.
