@@ -23,10 +23,11 @@ describe('steroids:common', function () {
       'app/common/index.coffee',
       'app/common/assets/loading.html',
       'app/common/assets/icons/home.svg',
-      'app/common/assets/icons/google.svg',
+      'app/common/assets/icons/cog.svg',
       'app/common/stylesheets/application.scss',
       'app/common/views/getting-started.html',
       'app/common/views/layout.html',
+      'app/common/views/settings-mock.html',
       'app/common/views/start-the-tutorial.html',
       'app/common/views/using-the-scanner.html'
     ]);
