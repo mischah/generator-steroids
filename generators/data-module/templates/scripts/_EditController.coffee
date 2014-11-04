@@ -1,7 +1,7 @@
 angular
   .module('<%= moduleName %>')
   .controller("EditController", ($scope, <%= _.capitalize(resourceName) %>Resource)->
-
+    $scope.title = "Edit <%= _.capitalize(resourceName) %>"
     $scope.<%= resourceName %> = {}
     $scope.showSpinner = true
 
@@ -18,9 +18,4 @@ angular
 
     $scope.cancel = ->
       steroids.modal.hide()
-
-    # Native navigation
-    steroids.view.navigationBar.show "Edit <%= _.capitalize(resourceName) %>"
-    steroids.view.setBackgroundColor "#FFFFFF"
-
   )

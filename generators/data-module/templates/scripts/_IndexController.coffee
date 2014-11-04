@@ -2,6 +2,7 @@ angular
   .module('<%= moduleName %>')
   .controller("IndexController", ($scope, <%= _.capitalize(resourceName) %>Resource)->
 
+    $scope.title = "<%= _.capitalize(resourceName) %>s"
     $scope.<%= resourceName %>s = []
     $scope.showSpinner = true
 
@@ -24,9 +25,4 @@ angular
     # Trigger data refresh when this view becomes visible
     steroids.data.reactive.whenVisible.onValue ->
       fetchResources()
-
-    # Native navigation
-    steroids.view.navigationBar.show "<%= _.capitalize(resourceName) %>s"
-    steroids.view.setBackgroundColor "#FFFFFF"
-
   )

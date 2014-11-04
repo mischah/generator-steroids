@@ -1,4 +1,10 @@
 <div ng-controller="IndexController">
+  <super-navbar>
+    <super-navbar-title>
+      {{ title }}
+    </super-navbar-title>
+  </super-navbar>
+
   <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
   <div ng-hide="showSpinner">
     <ul class="list">

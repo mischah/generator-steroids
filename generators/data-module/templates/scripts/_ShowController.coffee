@@ -1,7 +1,7 @@
 angular
   .module('<%= moduleName %>')
   .controller("ShowController", ($scope, <%= _.capitalize(resourceName) %>Resource)->
-
+      $scope.title = "Show <%= _.capitalize(resourceName) %>"
       $scope.<%= resourceName %> = {}
       $scope.showSpinner = true
 
@@ -24,9 +24,4 @@ angular
       $scope.showEditModal = (id)->
         webView = new steroids.views.WebView "/app/<%= moduleName %>/edit.html?id=#{id}"
         steroids.modal.show webView
-
-      # Native navigation
-      steroids.view.navigationBar.show "Show <%= _.capitalize(resourceName) %>"
-      steroids.view.setBackgroundColor "#FFFFFF"
-
   )

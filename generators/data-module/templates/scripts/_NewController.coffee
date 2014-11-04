@@ -1,7 +1,7 @@
 angular
   .module('<%= moduleName %>')
   .controller("NewController", ($scope, <%= _.capitalize(resourceName) %>Resource)->
-
+    $scope.title = "New <%= _.capitalize(resourceName) %>"
     $scope.<%= resourceName %> = {}
 
     $scope.submitForm = ->
@@ -11,8 +11,4 @@ angular
 
     $scope.cancel = ->
       steroids.modal.hide()
-
-    # Native navigation
-    steroids.view.navigationBar.show "New <%= _.capitalize(resourceName) %>"
-    steroids.view.setBackgroundColor "#FFFFFF"
   )

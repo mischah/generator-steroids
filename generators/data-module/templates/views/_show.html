@@ -1,17 +1,25 @@
-<div ng-controller="ShowController" class="padding">
-  <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
-  <div ng-hide="showSpinner">
-    <h2 ng-bind="<%= resourceName %>.<%= fields[0] %>"></h2>
-    <% fields.forEach( function(field) { %>
-    <% if (field!=fields[0]) { %> <p><%= field %>: <span ng-bind="<%= resourceName %>.<%= field %>"></span></p> <% } %>
-    <% } ) %>
+<div ng-controller="ShowController">
+  <super-navbar>
+    <super-navbar-title>
+      {{ title }}
+    </super-navbar-title>
+  </super-navbar>
 
-    <button ng-click="showEditModal(<%= resourceName %>.id)" class="button button-block button-positive">
-      Edit
-    </button>
+  <div class="padding">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+      <h2 ng-bind="<%= resourceName %>.<%= fields[0] %>"></h2>
+      <% fields.forEach( function(field) { %>
+      <% if (field!=fields[0]) { %> <p><%= field %>: <span ng-bind="<%= resourceName %>.<%= field %>"></span></p> <% } %>
+      <% } ) %>
 
-    <button ng-click="remove(<%= resourceName %>.id)" class="button button-block button-negative">
-      Remove
-    </button>
+      <button ng-click="showEditModal(<%= resourceName %>.id)" class="button button-block button-positive">
+        Edit
+      </button>
+
+      <button ng-click="remove(<%= resourceName %>.id)" class="button button-block button-negative">
+        Remove
+      </button>
+    </div>
   </div>
 </div>
