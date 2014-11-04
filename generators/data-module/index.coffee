@@ -59,12 +59,6 @@ module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
     @src.copy "views/__form.html", "app/#{@moduleName}/views/_form.html", process: @template
     @src.copy "views/__spinner.html", "app/#{@moduleName}/views/_spinner.html", process: @template
 
-  dependencies: ->
-    @addBowerDependencies {
-      angular: '1.2.23'
-      "steroids-data": '3.5.0'
-    }
-
   end: ->
     @installDependencies
       skipInstall: @options['skip-install']
