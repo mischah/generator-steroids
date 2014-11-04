@@ -2,7 +2,6 @@ angular
   .module('<%= moduleName %>')
   .controller("IndexController", ($scope, <%= _.capitalize(resourceName) %>Resource)->
 
-    $scope.title = "<%= _.capitalize(resourceName) %>s"
     $scope.<%= resourceName %>s = []
     $scope.showSpinner = true
 

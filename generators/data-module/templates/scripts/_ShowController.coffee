@@ -1,7 +1,6 @@
 angular
   .module('<%= moduleName %>')
   .controller("ShowController", ($scope, <%= _.capitalize(resourceName) %>Resource)->
-      $scope.title = "Show <%= _.capitalize(resourceName) %>"
       $scope.<%= resourceName %> = {}
       $scope.showSpinner = true
 
