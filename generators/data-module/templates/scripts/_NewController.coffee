@@ -6,5 +6,5 @@ angular
     $scope.submitForm = ->
       $scope.showSpinner = true
       <%= _.capitalize(resourceName) %>Resource.create($scope.<%= resourceName %>).then ->
-        steroids.modal.hide()
+        supersonic.ui.modal.hide()
   )

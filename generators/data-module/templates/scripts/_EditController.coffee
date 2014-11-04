@@ -13,5 +13,5 @@ angular
     $scope.submitForm = ->
       $scope.showSpinner = true
       $scope.<%= resourceName %>.save().then ->
-        steroids.modal.hide()
+        supersonic.ui.modal.hide()
   )

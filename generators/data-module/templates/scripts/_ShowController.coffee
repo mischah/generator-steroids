@@ -18,5 +18,5 @@ angular
       $scope.remove = (id)->
         $scope.showSpinner = true
         $scope.<%= resourceName %>.delete().then ->
-          steroids.layers.pop()
+          supersonic.ui.layers.pop()
   )
