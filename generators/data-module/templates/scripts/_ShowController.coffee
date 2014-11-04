@@ -12,7 +12,7 @@ angular
             $scope.<%= resourceName %> = <%= resourceName %>
             $scope.showSpinner = false
 
-      steroids.data.reactive.whenVisible.onValue ->
+      supersonic.ui.views.current.whenVisible ->
         fetchResource()
 
       $scope.remove = (id)->

@@ -13,6 +13,6 @@ angular
           $scope.showSpinner = false
 
     # Trigger data refresh when this view becomes visible
-    steroids.data.reactive.whenVisible.onValue ->
+    supersonic.ui.views.current.whenVisible ->
       fetchResources()
   )
