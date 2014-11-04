@@ -17,6 +17,9 @@ module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
     @resourceName = @context.resourceName = resourceName
     @fieldNames = @context.fields = fieldNames
 
+    if !@resourceName?.length
+      throw new Error "Expected a resource name as the first argument to the generator"
+
   prompting: ->
     done = @async()
 
