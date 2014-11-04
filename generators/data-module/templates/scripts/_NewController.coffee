@@ -7,7 +7,4 @@ angular
       $scope.showSpinner = true
       <%= _.capitalize(resourceName) %>Resource.create($scope.<%= resourceName %>).then ->
         steroids.modal.hide()
-
-    $scope.cancel = ->
-      steroids.modal.hide()
   )

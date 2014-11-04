@@ -19,8 +19,4 @@ angular
         $scope.showSpinner = true
         $scope.<%= resourceName %>.delete().then ->
           steroids.layers.pop()
-
-      $scope.showEditModal = (id)->
-        webView = new steroids.views.WebView "/app/<%= moduleName %>/edit.html?id=#{id}"
-        steroids.modal.show webView
   )
