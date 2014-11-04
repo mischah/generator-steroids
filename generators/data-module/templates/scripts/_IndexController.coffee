@@ -1,6 +1,6 @@
 angular
   .module('<%= moduleName %>')
-  .controller("IndexController", ($scope, <%= _.capitalize(resourceName) %>)->
+  .controller("IndexController", ($scope, <%= _.capitalize(resourceName) %>) ->
 
     $scope.<%= resourceName %>s = []
     $scope.showSpinner = true

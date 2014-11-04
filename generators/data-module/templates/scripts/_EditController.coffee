@@ -1,11 +1,11 @@
 angular
   .module('<%= moduleName %>')
-  .controller("EditController", ($scope, <%= _.capitalize(resourceName) %>)->
+  .controller("EditController", ($scope, <%= _.capitalize(resourceName) %>) ->
     $scope.<%= resourceName %> = null
     $scope.showSpinner = true
 
     # Fetch an object based on id from the database
-    <%= _.capitalize(resourceName) %>.find(steroids.view.params.id).then (<%= resourceName %>)->
+    <%= _.capitalize(resourceName) %>.find(steroids.view.params.id).then (<%= resourceName %>) ->
       $scope.$apply ->
         $scope.<%= resourceName %> = <%= resourceName %>
         $scope.showSpinner = false
