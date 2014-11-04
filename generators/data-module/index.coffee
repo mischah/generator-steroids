@@ -17,6 +17,9 @@ module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
     @resourceName = @context.resourceName = resourceName
     @fieldNames = @context.fields = fieldNames
 
+    if !@resourceName?.length
+      throw new Error "Expected a resource name as the first argument to the generator"
+
   prompting: ->
     done = @async()
 
@@ -29,7 +32,7 @@ module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
       type: "input"
       name: "moduleName"
       message: "What is the name for your new module?"
-      default: "myDataModule"
+      default: "#{@resourceName}s"
     ]
     @prompt prompts, (props) =>
       @moduleName = @context.moduleName = props.moduleName
@@ -58,12 +61,6 @@ module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
     @src.copy "views/_new.html", "app/#{@moduleName}/views/new.html", process: @template
     @src.copy "views/__form.html", "app/#{@moduleName}/views/_form.html", process: @template
     @src.copy "views/__spinner.html", "app/#{@moduleName}/views/_spinner.html", process: @template
-
-  dependencies: ->
-    @addBowerDependencies {
-      angular: '1.2.23'
-      "steroids-data": '3.5.0'
-    }
 
   end: ->
     @installDependencies
