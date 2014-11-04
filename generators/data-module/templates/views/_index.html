@@ -8,12 +8,12 @@
   <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
   <div ng-hide="showSpinner">
     <ul class="list">
-      <li class="item item-icon-right" ng-repeat="<%= resourceName %> in <%= resourceName %>s">
-        <super-navigate location="<%= moduleName %>#show?id={{ <%= resourceName %>.id }}">
-          <span ng-bind="<%= resourceName %>.<%= fields[0] %>"></span>
-          <i class="icon ion-ios7-arrow-right"></i>
-        </super-navigate>
-      </li>
+      <super-navigate location="<%= moduleName %>#show?id={{ <%= resourceName %>.id }}">
+        <li class="item item-icon-right" ng-repeat="<%= resourceName %> in <%= resourceName %>s">
+            <span ng-bind="<%= resourceName %>.<%= fields[0] %>"></span>
+            <i class="icon ion-ios7-arrow-right"></i>
+        </li>
+      </super-navigate>
     </ul>
 
     <super-modal-show location="<%= moduleName %>#new">
