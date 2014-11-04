@@ -14,7 +14,4 @@ angular
       $scope.showSpinner = true
       $scope.<%= resourceName %>.save().then ->
         steroids.modal.hide()
-
-    $scope.cancel = ->
-      steroids.modal.hide()
   )
