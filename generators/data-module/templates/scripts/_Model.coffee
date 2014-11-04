@@ -1,3 +1,3 @@
 angular
   .module('<%= moduleName %>')
-  .constant('<%= _.capitalize(resourceName) %>Resource', supersonic.data.resource '<%= resourceName %>')
+  .constant('<%= _.capitalize(resourceName) %>', supersonic.data.model '<%= resourceName %>')

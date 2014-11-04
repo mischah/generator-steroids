@@ -1,13 +1,13 @@
 angular
   .module('<%= moduleName %>')
-  .controller("ShowController", ($scope, <%= _.capitalize(resourceName) %>Resource)->
-      $scope.<%= resourceName %> = {}
+  .controller("ShowController", ($scope, <%= _.capitalize(resourceName) %>)->
+      $scope.<%= resourceName %> = null
       $scope.showSpinner = true
 
       # Fetch an object based on id
       fetchResource = ->
         $scope.showSpinner = true
-        <%= _.capitalize(resourceName) %>Resource.find(steroids.view.params.id).then (<%= resourceName %>)->
+        <%= _.capitalize(resourceName) %>.find(steroids.view.params.id).then (<%= resourceName %>)->
           $scope.$apply ->
             $scope.<%= resourceName %> = <%= resourceName %>
             $scope.showSpinner = false
@@ -17,7 +17,7 @@ angular
 
       $scope.remove = (id)->
         $scope.showSpinner = true
-        <%= _.capitalize(resourceName) %>Resource.remove(id).then ->
+        $scope.<%= resourceName %>.delete().then ->
           steroids.layers.pop()
 
       $scope.showEditModal = (id)->
