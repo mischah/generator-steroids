@@ -10,10 +10,6 @@ angular
       webView = new steroids.views.WebView "/app/<%= moduleName %>/show.html?id=#{id}"
       steroids.layers.push webView
 
-    $scope.showModal = ->
-      webView = new steroids.views.WebView "/app/<%= moduleName %>/new.html"
-      steroids.modal.show webView
-
     fetchResources = ->
       $scope.showSpinner = true
       <%= _.capitalize(resourceName) %>Resource.findAll().then (<%= resourceName %>s)->

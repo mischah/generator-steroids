@@ -14,8 +14,10 @@
       </li>
     </ul>
 
-    <button ng-click="showModal()" class="button button-full button-positive">
-      Create a new <%= resourceName %>
-    </button>
+    <super-modal-show location="<%= moduleName %>#new">
+      <button class="button button-full button-positive">
+        Create a new <%= resourceName %>
+      </button>
+    </super-modal-show>
   </div>
 </div>
