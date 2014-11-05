@@ -12,24 +12,43 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
   constructor: ->
     super
 
-    @composeWith 'steroids:common'
-
   initializing: ->
     @pkg = require("../../package.json")
 
   prompting: ->
     done = @async()
 
-    # Have Yeoman greet the user.
-    @log yosay("Welcome to the exquisite Steroids project generator!")
-    prompts = [
+    appTypePrompt =
+      type: "list"
+      name: "appType"
+      message: "Do you want to create a Multi-Page or Single-Page Application?"
+      choices: [
+        { name: "Multi-Page Application (Supersonic default)", value: "mpa" }
+        { name: "Single-Page Application (for use with other frameworks)", value: "spa"}
+      ]
+      default: "mpa"
+
+    projectNamePrompt =
       type: "input"
       name: "projectName"
       message: "What is the name for your new app?"
       default: "mySteroidsApp"
+
+    prompts = [
+      appTypePrompt
+      projectNamePrompt
     ]
-    @prompt prompts, (props) =>
-      @projectName = props.projectName
+
+    @log yosay("Welcome to the exquisite Steroids project generator!")
+
+    @prompt prompts, (answers) =>
+      switch answers.appType
+        when "spa"
+          @composeWith 'steroids:spa'
+        when "mpa"
+          @composeWith 'steroids:mpa'
+
+      @projectName = answers.projectName
       if fs.existsSync(@projectName)
 
         @log.writeln(

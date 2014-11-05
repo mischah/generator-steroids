@@ -4,14 +4,6 @@ module.exports = class ApplicationConfigGenerator extends SteroidsGenerator
   constructor: ->
     super
 
-    @argument 'startView', {
-      type: String
-      required: true
-    }
-
-  initializing: ->
-    @context.startView = @startView
-
   writing:
     createApplicationConfiguration: ->
       # App name needs to be late bound because the working directory is
@@ -20,4 +12,6 @@ module.exports = class ApplicationConfigGenerator extends SteroidsGenerator
 
       @dest.mkdir 'config'
       @src.copy "_app.coffee", "config/app.coffee", process: @template
-      @src.copy "_structure.coffee", "config/structure.coffee", process: @template
+
+      structureSourceFile = "_structure_#{@options.appType}.coffee"
+      @src.copy structureSourceFile, "config/structure.coffee", process: @template
