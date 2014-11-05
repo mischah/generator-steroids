@@ -16,7 +16,8 @@ describe('steroids:app', function () {
       .inDir(path.join(os.tmpdir(), './temp-test'))
       .withOptions({ 'skip-install': true })
       .withPrompt({
-        projectName: "testApp"
+        projectName: "testApp",
+        appType: "spa"
       })
       .withGenerators(deps)
       .on('end', done);
