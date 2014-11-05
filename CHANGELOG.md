@@ -1,3 +1,8 @@
+#0.4.5 (2014-11-05)
+
+Features:
+- Removed `default.css` as iOS v4.0.1 is being released and native styles will be loaded from now on from `android.css` and `ios.css` respectively.
+
 #0.4.4 (2014-10-29)
 
 Features:
