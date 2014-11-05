@@ -4,16 +4,11 @@ angular
     $scope.<%= resourceName %> = null
     $scope.showSpinner = true
 
-    # Fetch an object based on id
-    fetchResource = ->
-      $scope.showSpinner = true
+    supersonic.ui.views.current.whenVisible ->
       <%= _.capitalize(resourceName) %>.find(steroids.view.params.id).then (<%= resourceName %>)->
         $scope.$apply ->
           $scope.<%= resourceName %> = <%= resourceName %>
           $scope.showSpinner = false
-
-    supersonic.ui.views.current.whenVisible ->
-      fetchResource()
 
     $scope.remove = (id) ->
       $scope.showSpinner = true
