@@ -3,8 +3,6 @@ helpers = yeoman.test
 
 availableGenerators = [
   'app'
-  'application-config'
-  'common'
   'module'
   'data-module'
 ]
@@ -44,7 +42,7 @@ runGenerator = (namespace, {targetDirectory, args, options, answers}, done) ->
   generator.run()
 
 module.exports =
-  app: ({projectName, targetDirectory, skipInstall}, done) ->
+  app: ({projectName, targetDirectory, appType, skipInstall}, done) ->
     runGenerator 'app', {
       targetDirectory
       options: {
@@ -52,6 +50,7 @@ module.exports =
       }
       answers: {
         projectName: projectName || 'mySteroidsApp'
+        appType: appType || 'mpa'
       }
     }, done
 
