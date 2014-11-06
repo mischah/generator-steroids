@@ -1,29 +1,42 @@
+# Read more about app structure at http://docs.appgyver.com
+
 module.exports =
 
   tabs: [
     {
       title: "Index"
       id: "index"
-      location: "common#getting-started"
+      location: "example#getting-started"
     }
     {
       title: "Settings"
       id: "settings"
-      location: "common#settings-mock"
+      location: "example#settings"
     }
   ]
 
-  # For an app with a single view, remove the tabs object and uncomment below.
   # rootView:
-  #   location: "common#getting-started"
+  #   location: "example#getting-started"
 
   preloads: [
     {
-      id: "tutorial-view"
-      location: "common#start-the-tutorial"
+      id: "learn-more"
+      location: "example#learn-more"
     }
     {
-      id: "scanner-view"
-      location: "common#using-the-scanner"
+      id: "using-the-scanner"
+      location: "example#using-the-scanner"
     }
   ]
+
+  # drawers:
+  #   left:
+  #     id: "leftDrawer"
+  #     location: "example#drawer"
+  #     showOnAppLoad: false
+  #   options:
+  #     animation: "swingingDoor"
+  #
+  # initialView:
+  #   id: "initialView"
+  #   location: "example#initial-view"

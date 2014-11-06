@@ -53,6 +53,8 @@ describe('steroids:app', function () {
       'app/example/views/learn-more.html',
       'app/example/views/settings.html',
       'app/example/views/using-the-scanner.html',
+      'app/example/views/drawer.html',
+      'app/example/views/initial-view.html'
     ]);
   });
 

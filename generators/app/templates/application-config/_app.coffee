@@ -1,3 +1,5 @@
+# Read more about app configs at http://docs.appgyver.com
+
 module.exports =
   app:
     name: "{{ appName }}"
