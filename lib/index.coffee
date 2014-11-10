@@ -42,7 +42,7 @@ runGenerator = (namespace, {targetDirectory, args, options, answers}, done) ->
   generator.run()
 
 module.exports =
-  app: ({projectName, targetDirectory, appType, skipInstall}, done) ->
+  app: ({projectName, targetDirectory, appType, scriptExt, skipInstall}, done) ->
     runGenerator 'app', {
       targetDirectory
       options: {
@@ -51,6 +51,7 @@ module.exports =
       answers: {
         projectName: projectName || 'mySteroidsApp'
         appType: appType || 'mpa'
+        scriptExt: scriptExt || 'coffee'
       }
     }, done
 

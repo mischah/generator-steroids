@@ -1,25 +1,44 @@
-<div class="padding">
-
+<div class="padding" ng-controller="LearnMoreController">
   <super-navbar>
-    <super-navbar-title>
-      Welcome to Supersonic!
+    <super-navbar-title ng-bind="navbarTitle">
     </super-navbar-title>
   </super-navbar>
 
-  <p>Awesome! This file is located at <strong>app/example/views/getting-started.html</strong> &mdash; open it, change some text and save the file. The changes are updated to all connected devices. Cool, huh?</p>
+  <h3>Working with AngularJS</h3>
 
-  <p>Below, you can see our multi-page navigation in action. Tap on a button to move to a new view.</p>
+  <p>Supersonic works with AngularJS out of the box. The button below triggers an Anglar function defined in this view's controller.</p>
 
-  <super-navigate view-id="using-the-scanner">
-    <button class="button button-block button-positive icon-left ion-wand">Using the AppGyver Scanner</button>
-  </super-navigate>
+  <p>It will query the native side for the user's current coordinates and display them below.</p>
 
-  <super-navigate view-id="learn-more">
-    <button class="button button-block button-positive icon-left ion-university">Learn more</button>
-  </super-navigate>
+  <div class="card padding">
+    <h4>User Location</h4>
+    <button class="button button-block button-outline button-positive icon-left ion-location" ng-click="getLocation()">Where am I?</button>
 
-  <h2>Get in touch with us!</h2>
+    <p><strong>User latitude:</strong> <span ng-bind="userLatitude"></span></p>
+    <p><strong>User longitude:</strong> <span ng-bind="userLongitude"></span></p>
+  </div>
 
-  <p>Feel free to contact us at <a href="mailto:contact@appgyver.com">contact@appgyver.com</a>, we would love to get your feedback!</p>
+  <p>Angular also works great with Supersonic native components. The input field below will automatically update the navigation bar title.</p>
 
+  <div class="card padding">
+    <h4>Navigation Bar Title</h4>
+    <label class="item item-input">
+      <input type="text" ng-model="navbarTitle">
+    </label>
+  </div
+
+  <p>You can find the AngularJS controller used with this view at</p>
+
+  <p><strong><small>/app/example/scripts/LearnMoreController.coffee</small></strong></p>
+
+  <h3>Supersonic First Mile</h3>
+
+  <p>If you're not following it already, you should head on over to the <strong>First Mile tutorial</strong> at</p>
+
+  <p><a onclick="supersonic.app.openURL('http://docs.appgyver.com')" href="#">http://docs.appgyver.com</a></p>
+
+  <p>We'll tell you all you need to know to get a running start in developing apps with Supersonic. There's also plenty of tutorials and in-depth guides in the docs, plus the full Supersonic API reference, so check it out!</p>
+
+  <h3>Forums</h3>
+  <p>Stuck on something? Built something great that you want to share? Hop on to the AppGyver forums at <a onclick="supersonic.app.openURL('https://forums.appgyver.com')" href="#">https://forums.appgyver.com</a> and join the community!</p>
 </div>

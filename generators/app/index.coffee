@@ -18,6 +18,16 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
   prompting: ->
     done = @async()
 
+    scriptExtPrompt =
+      type: "list"
+      name: "scriptExt"
+      message: "Do you want your project to be generated with CoffeeScript or JavaScript files?"
+      choices: [
+        { name: "CoffeeScript", value: "coffee" }
+        { name: "JavaScript", value: "js"}
+      ]
+      default: "coffee"
+
     appTypePrompt =
       type: "list"
       name: "appType"
@@ -35,8 +45,9 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
       default: "mySteroidsApp"
 
     prompts = [
-      appTypePrompt
       projectNamePrompt
+      appTypePrompt
+      scriptExtPrompt
     ]
 
     @log yosay("Welcome to the exquisite Steroids project generator!")
@@ -59,6 +70,8 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
 
       @appType = answers.appType
 
+      @scriptExt = answers.scriptExt
+
       done()
 
   writing:
@@ -70,12 +83,12 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
       @src.copy "_package.json", "package.json", process: @template
       @src.copy "_bower.json", "bower.json", process: @template
       @src.copy "gitignore", ".gitignore"
-      @src.copy "Gruntfile.coffee", "Gruntfile.coffee"
+      @src.copy "Gruntfile.#{@scriptExt}", "Gruntfile.#{@scriptExt}"
 
     mpaFiles: ->
       if @appType is "mpa"
         @dest.mkdir "app/common/"
-        @src.copy "mpa/common/index.coffee", "app/common/index.coffee"
+        @src.copy "mpa/common/index.#{@scriptExt}", "app/common/index.#{@scriptExt}"
         @src.copy "mpa/common/assets/loading.html", "app/common/assets/loading.html"
         @src.copy "mpa/common/assets/icons/home.svg", "app/common/assets/icons/home.svg"
         @src.copy "mpa/common/assets/icons/cog.svg", "app/common/assets/icons/cog.svg"
@@ -85,8 +98,8 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
         @src.copy "mpa/common/views/layout.html", "app/common/views/layout.html"
 
         @dest.mkdir "app/example"
-        @src.copy "mpa/example/index.coffee", "app/example/index.coffee"
-        @src.copy "mpa/example/scripts/LearnMoreController.coffee", "app/example/scripts/LearnMoreController.coffee"
+        @src.copy "mpa/example/index.#{@scriptExt}", "app/example/index.#{@scriptExt}"
+        @src.copy "mpa/example/scripts/LearnMoreController.#{@scriptExt}", "app/example/scripts/LearnMoreController.#{@scriptExt}"
         @src.copy "mpa/example/views/getting-started.html", "app/example/views/getting-started.html"
         @src.copy "mpa/example/views/learn-more.html", "app/example/views/learn-more.html"
         @src.copy "mpa/example/views/using-the-scanner.html", "app/example/views/using-the-scanner.html"

@@ -6,12 +6,8 @@ var assert = require('yeoman-generator').assert;
 var helpers = require('yeoman-generator').test;
 var os = require('os');
 
-describe('steroids:app', function () {
+describe('steroids:app spa', function () {
   before(function (done) {
-    var deps = [
-      [helpers.createDummyGenerator(), 'steroids:common'],
-      [helpers.createDummyGenerator(), 'steroids:platform-config']
-    ];
     helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
       .withOptions({ 'skip-install': true })
@@ -19,7 +15,6 @@ describe('steroids:app', function () {
         projectName: "testApp",
         appType: "spa"
       })
-      .withGenerators(deps)
       .on('end', done);
   });
 
@@ -30,6 +25,26 @@ describe('steroids:app', function () {
       '.gitignore',
       'Gruntfile.coffee',
       'logs'
+    ]);
+  });
+});
+
+describe('steroids:app spa with js', function () {
+  before(function (done) {
+    helpers.run(path.join(__dirname, '../generators/app'))
+      .inDir(path.join(os.tmpdir(), './temp-test'))
+      .withOptions({ 'skip-install': true })
+      .withPrompt({
+        projectName: "testApp",
+        appType: "spa",
+        scriptExt: "js"
+      })
+      .on('end', done);
+  });
+
+  it('creates Gruntfile.js', function () {
+    assert.file([
+      'Gruntfile.js'
     ]);
   });
 });

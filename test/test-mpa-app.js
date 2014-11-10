@@ -6,12 +6,8 @@ var assert = require('yeoman-generator').assert;
 var helpers = require('yeoman-generator').test;
 var os = require('os');
 
-describe('steroids:app', function () {
+describe('steroids:app mpa', function () {
   before(function (done) {
-    var deps = [
-      [helpers.createDummyGenerator(), 'steroids:common'],
-      [helpers.createDummyGenerator(), 'steroids:platform-config']
-    ];
     helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
       .withOptions({ 'skip-install': true })
@@ -19,7 +15,6 @@ describe('steroids:app', function () {
         projectName: "testApp",
         appType: "mpa"
       })
-      .withGenerators(deps)
       .on('end', done);
   });
 
@@ -49,6 +44,7 @@ describe('steroids:app', function () {
   it('creates mpa example module files', function () {
     assert.file([
       'app/example/index.coffee',
+      'app/example/scripts/LearnMoreController.coffee',
       'app/example/views/getting-started.html',
       'app/example/views/learn-more.html',
       'app/example/views/settings.html',
@@ -65,4 +61,28 @@ describe('steroids:app', function () {
     ]);
   });
 
+});
+
+
+describe('steroids:app mpa', function () {
+  before(function (done) {
+    helpers.run(path.join(__dirname, '../generators/app'))
+      .inDir(path.join(os.tmpdir(), './temp-test'))
+      .withOptions({ 'skip-install': true })
+      .withPrompt({
+        projectName: "testApp",
+        appType: "mpa",
+        scriptExt: "js"
+      })
+      .on('end', done);
+  });
+
+  it('creates JS files', function () {
+    assert.file([
+      'Gruntfile.js',
+      'app/common/index.js',
+      'app/example/index.js',
+      'app/example/scripts/LearnMoreController.js'
+    ]);
+  });
 });
