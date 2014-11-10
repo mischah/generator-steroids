@@ -86,6 +86,7 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
 
         @dest.mkdir "app/example"
         @src.copy "mpa/example/index.coffee", "app/example/index.coffee"
+        @src.copy "mpa/example/scripts/LearnMoreController.coffee", "app/example/scripts/LearnMoreController.coffee"
         @src.copy "mpa/example/views/getting-started.html", "app/example/views/getting-started.html"
         @src.copy "mpa/example/views/learn-more.html", "app/example/views/learn-more.html"
         @src.copy "mpa/example/views/using-the-scanner.html", "app/example/views/using-the-scanner.html"

@@ -1,22 +1,39 @@
-<super-navbar>
-  <super-navbar-title>
-    Welcome to Supersonic!
-  </super-navbar-title>
-</super-navbar>
+<div class="padding" ng-controller="GettingStartedController">
 
-<div class="padding">
+  <super-navbar>
+    <super-navbar-title>
+      Welcome to Supersonic!
+    </super-navbar-title>
+  </super-navbar>
 
-  <p>Awesome! This file is located at <strong>app/common/views/getting-started.html</strong> &mdash; open it, change some text and save the file. The changes are updated to all connected devices. Cool, huh?</p>
+  <p>Awesome! This file is located at <strong>app/example/views/getting-started.html</strong> &mdash; open it, change some text and save the file. The changes are updated to all connected devices. Cool, huh?</p>
 
   <p>Below, you can see our multi-page navigation in action. Tap on a button to move to a new view.</p>
 
   <super-navigate view-id="using-the-scanner">
-    <button class="button button-block button-positive"><i class="icon ion-wand"></i> Using the AppGyver Scanner</button>
+    <button class="button button-block button-positive icon-left ion-wand">Using the AppGyver Scanner</button>
   </super-navigate>
 
   <super-navigate view-id="learn-more">
-    <button class="button button-block button-positive"><i class="icon ion-university"></i> Learn more</button>
+    <button class="button button-block button-positive icon-left ion-university">Learn more</button>
   </super-navigate>
+
+  <h2>Working with AngularJS</h2>
+
+  <p>Supersonic works with AngularJS out of the box. The button below triggers an Anglar function defined in this view's controller.</p>
+
+  <p>It will query the native side for the user's current coordinates and display them below.</p>
+
+  <div class="card padding">
+    <button class="button button-block button-balanced icon-left ion-chatbox" ng-click="getLocation()">Where am I?</button>
+
+    <p><strong>User latitude:</strong> <span ng-bind="userLatitude"></span></p>
+    <p><strong>User latitude:</strong> <span ng-bind="userLongitude"></span></p>
+  </div>
+
+  <p>You can find the AngularJS controller used with this view at:</p>
+
+  <p><strong><small>/app/example/scripts/GettingStartedController.coffee</small></strong></p>
 
   <h2>Get in touch with us!</h2>
 
