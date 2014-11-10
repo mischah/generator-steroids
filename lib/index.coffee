@@ -55,11 +55,12 @@ module.exports =
       }
     }, done
 
-  module: ({ moduleName, targetDirectory }, done) ->
+  module: ({ moduleName, scriptExt, targetDirectory }, done) ->
     runGenerator 'module', {
       targetDirectory
       answers: {
         moduleName: moduleName || 'myModule'
+        scriptExt: scriptExt || 'coffee'
       }
     }, done
 
