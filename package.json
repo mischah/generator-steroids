@@ -1,15 +1,21 @@
 {
   "name": "generator-steroids",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "index.js",
   "repository": "AppGyver/generator-steroids",
-  "author": {
-    "name": "Eevert Saukkokoski",
-    "email": "",
-    "url": "https://github.com/Ezku"
-  },
+  "contributors": [
+    {
+      "name": "Eevert Saukkokoski",
+      "email": "eevert.saukkokoski@appgyver.com",
+      "url": "https://github.com/Ezku"
+    }
+    {
+      "name": "Harri Sarsa",
+      "email": "harri.sarsa@appgyver.com"
+    }
+  ],
   "engines": {
     "node": ">=0.10.0"
   },
@@ -17,16 +23,16 @@
     "test": "mocha"
   },
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator", "steroids", "supersonic", "appgyver"
   ],
   "dependencies": {
-    "chalk": "^0.5.1",
-    "coffee-script": "^1.8.0",
-    "lodash-node": "^2.4.1",
-    "mustache": "^0.8.2",
-    "underscore.string": "^2.3.3",
-    "yeoman-generator": "^0.17.0",
-    "yosay": "^0.3.0"
+    "chalk": "0.5.1",
+    "coffee-script": "1.8.0",
+    "lodash-node": "2.4.1",
+    "mustache": "0.8.2",
+    "underscore.string": "2.3.3",
+    "yeoman-generator": "0.17.7",
+    "yosay": "0.3.0"
   },
   "devDependencies": {
     "mocha": "*"
