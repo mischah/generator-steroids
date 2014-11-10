@@ -1,8 +1,8 @@
-/**************************************
- *  Navigation Bar
- *************************************/
+/***********************************************************
+ * These styles apply for native components on Android.
+ * Read more about native styles at http://docs.appgyver.com
+ ***********************************************************/
 
-/* This sets the navbar background color and button font colors. */
 navigation-bar {
   background-color: #00B5FF;
   color: #ffffff;
@@ -10,21 +10,23 @@ navigation-bar {
   padding-right: 6px;
 }
 
-/* Sets style for the title element on navbar. */
 navigation-bar title {
   color: #ffffff;
   font-size: 18px;
   font-weight: 600;
 }
 
-/* Style for navbar buttons (not back button) */
-navigation-bar button, navigation-bar back-bar-button {
+navigation-bar button {
   color: #ffffff;
-  font-weight: medium;
+  font-weight: 300;
   margin-left: 6px;
   margin-right: 6px;
 }
 
+navigation-bar back-indicator {
+  background-image: url(default_back_icon.png);
+  background-size: 18;
+}
 
 /**************************************
  *  Tab Bar
@@ -32,18 +34,17 @@ navigation-bar button, navigation-bar back-bar-button {
 
 tab-bar {
   background-color: #ffffff;
-  border-top: 1px #D8D8D8 solid;
+  border-top: 1px #d8d8d8 solid;
 }
 
 tab-bar tab-bar-item {
   color: #b0b1b4;
-  font-family: "Avenir";
+  font-family: "Roboto";
   font-size: 10px;
 }
 
 tab-bar tab-bar-item:selected {
   color: #1596f7;
-  background-color: #F2F2F2;
 }
 
 tab-bar divider {
