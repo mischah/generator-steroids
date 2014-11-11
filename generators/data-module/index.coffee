@@ -32,7 +32,7 @@ module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
       type: "input"
       name: "moduleName"
       message: "What is the name for your new module?"
-      default: "#{@resourceName}"
+      default: "#{@resourceName.toLowerCase}"
     ]
     @prompt prompts, (props) =>
       @moduleName = @context.moduleName = props.moduleName
@@ -61,7 +61,3 @@ module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
     @src.copy "views/_new.html", "app/#{@moduleName}/views/new.html", process: @template
     @src.copy "views/__form.html", "app/#{@moduleName}/views/_form.html", process: @template
     @src.copy "views/__spinner.html", "app/#{@moduleName}/views/_spinner.html", process: @template
-
-  end: ->
-    @installDependencies
-      skipInstall: @options['skip-install']
