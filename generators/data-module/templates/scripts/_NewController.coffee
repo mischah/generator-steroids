@@ -1,10 +1,14 @@
 angular
   .module('<%= moduleName %>')
-  .controller("NewController", ($scope, <%= _.capitalize(resourceName) %>Resource) ->
+  .controller("NewController", ($scope, <%= _.capitalize(resourceName) %>) ->
     $scope.<%= resourceName %> = {}
 
     $scope.submitForm = ->
       $scope.showSpinner = true
-      <%= _.capitalize(resourceName) %>Resource.create($scope.<%= resourceName %>).then ->
+      new<%= resourceName %> = new <%= _.capitalize(resourceName) %>($scope.<%= resourceName %>)
+      new<%= resourceName %>.save().then ->
         supersonic.ui.modal.hide()
+
+    $scope.cancel = ->
+      supersonic.ui.modal.hide()
   )

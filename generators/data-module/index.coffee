@@ -32,7 +32,7 @@ module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
       type: "input"
       name: "moduleName"
       message: "What is the name for your new module?"
-      default: "#{@resourceName}s"
+      default: "#{@resourceName}"
     ]
     @prompt prompts, (props) =>
       @moduleName = @context.moduleName = props.moduleName

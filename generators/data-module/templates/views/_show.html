@@ -8,9 +8,9 @@
   <div class="padding">
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
-      <h2 ng-bind="<%= resourceName %>.<%= fields[0] %>"></h2>
+      <h2 ng-bind="<%= resourceName %>['<%= fields[0] %>']"></h2>
       <% fields.forEach( function(field) { %>
-      <% if (field!=fields[0]) { %> <p><%= field %>: <span ng-bind="<%= resourceName %>.<%= field %>"></span></p> <% } %>
+      <% if (field!=fields[0]) { %> <p><%= field %>: <span ng-bind="<%= resourceName %>['<%= field %>']"></span></p> <% } %>
       <% } ) %>
 
 

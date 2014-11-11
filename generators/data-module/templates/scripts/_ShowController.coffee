@@ -1,6 +1,6 @@
 angular
   .module('<%= moduleName %>')
-  .controller("ShowController", ($scope, <%= _.capitalize(resourceName) %>) ->
+  .controller("ShowController", ($scope, <%= _.capitalize(resourceName) %>, supersonic) ->
     $scope.<%= resourceName %> = null
     $scope.showSpinner = true
 

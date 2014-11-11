@@ -14,4 +14,7 @@ angular
       $scope.showSpinner = true
       $scope.<%= resourceName %>.save().then ->
         supersonic.ui.modal.hide()
+
+    $scope.cancel = ->
+      supersonic.ui.modal.hide()
   )

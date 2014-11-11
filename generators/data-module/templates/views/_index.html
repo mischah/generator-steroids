@@ -1,7 +1,7 @@
 <div ng-controller="IndexController">
   <super-navbar>
     <super-navbar-title>
-      <%= _.capitalize(resourceName) %>s
+      <%= _.capitalize(resourceName) %> Index
     </super-navbar-title>
   </super-navbar>
 
@@ -10,7 +10,7 @@
     <ul class="list">
       <super-navigate ng-attr-location="<%= moduleName %>#show?id={{ <%= resourceName %>.id }}" ng-repeat="<%= resourceName %> in <%= resourceName %>s">
         <li class="item item-icon-right">
-          <span ng-bind="<%= resourceName %>.<%= fields[0] %>"></span>
+          <span ng-bind="<%= resourceName %>['<%= fields[0] %>']"></span>
           <i class="icon ion-ios7-arrow-right"></i>
         </li>
       </super-navigate>
