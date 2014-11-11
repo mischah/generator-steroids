@@ -6,6 +6,8 @@ angular
     $scope.userLatitude = "Undefined";
     $scope.userLongitude = "Undefined";
 
+    supersonic.bind $scope, "navbarTitle";
+
     $scope.getLocation = function() {
       supersonic.device.geolocation.getPosition().then( function(position) {
         $scope.userLatitude = position.coords.latitude

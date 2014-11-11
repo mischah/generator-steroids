@@ -18,18 +18,22 @@
     <p><strong>User longitude:</strong> <span ng-bind="userLongitude"></span></p>
   </div>
 
+  <h3>Native Components and Data Binding between Views</h3>
   <p>Angular also works great with Supersonic native components. The input field below will automatically update the navigation bar title.</p>
 
   <div class="card padding">
-    <h4>Navigation Bar Title</h4>
+    <h4>Navigation Bar Title (Look Up!)</h4>
     <label class="item item-input">
       <input type="text" ng-model="navbarTitle">
     </label>
-  </div
+  </div>
 
-  <p>You can find the AngularJS controller used with this view at</p>
+  <p>What's more, Angular <strong>data models can be bound between views</strong>. the input field above stays automatically in sync with the corresponding input field on the Settings tab, which is a separate WebView.</p>
+
+  <p>You can find the AngularJS controllers used at:</p>
 
   <p><strong><small>/app/example/scripts/LearnMoreController.coffee</small></strong></p>
+  <p><strong><small>/app/example/scripts/SettingsController.coffee</small></strong></p>
 
   <h3>Supersonic First Mile</h3>
 

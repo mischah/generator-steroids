@@ -36,7 +36,7 @@ describe('steroids:app mpa', function () {
       'app/common/assets/icons/cog.svg',
       'app/common/native-styles/ios.css',
       'app/common/native-styles/android.css',
-      'app/common/stylesheets/application.scss',
+      'app/common/stylesheets/application.css',
       'app/common/views/layout.html'
     ]);
   });
@@ -45,6 +45,7 @@ describe('steroids:app mpa', function () {
     assert.file([
       'app/example/index.coffee',
       'app/example/scripts/LearnMoreController.coffee',
+      'app/example/scripts/SettingsController.coffee',
       'app/example/views/getting-started.html',
       'app/example/views/learn-more.html',
       'app/example/views/settings.html',

@@ -1,12 +1,27 @@
-<super-navbar>
-  <super-navbar-title>
-    Settings
-  </super-navbar-title>
-</super-navbar>
+<div class="padding" ng-controller="SettingsController">
 
-<div class="padding">
+  <super-navbar>
+    <super-navbar-title>
+      Settings
+    </super-navbar-title>
+  </super-navbar>
 
-  <p>This view has some example Supersonic CSS components for you to study and play around with.</p>
+  <h3>Data Binding Across Views</h3>
+
+  <p>The input field below stays automatically in sync with the corresponding field in the <strong>Learn More</strong> view – try it out!</p>
+  <div class="card padding">
+    <h4>Navigation Bar Title in Learn More View</h4>
+    <div class="item item-calm supersonic-navbar-mock">{{navbarTitle}}</div>
+    <br>
+    <label class="item item-input">
+      <input type="text" ng-model="navbarTitle">
+    </label>
+    <p><br><em>After typing something above, go check out the changes at <strong>Index tab</strong> > <strong>Learn More</strong>.</em></p>
+  </div>
+
+  <h3>Supersonic CSS Components</h3>
+
+  <p>Below are some example Supersonic CSS components for you to study and play around with.</p>
 
   <h2>I <span class="assertive">&lt;3</span>...</h2>
 
