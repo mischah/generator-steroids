@@ -5,7 +5,7 @@ angular
     $scope.showSpinner = true
 
     supersonic.ui.views.current.whenVisible ->
-      <%= _.capitalize(resourceName) %>.all().whenChanged (<%= resourceName %>s)->
+      <%= _.capitalize(resourceName) %>.all().whenChanged (<%= resourceName %>s) ->
         $scope.$apply ->
           $scope.<%= resourceName %>s = <%= resourceName %>s
           $scope.showSpinner = false

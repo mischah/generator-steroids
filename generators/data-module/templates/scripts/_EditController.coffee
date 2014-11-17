@@ -4,11 +4,11 @@ angular
     $scope.<%= resourceName %> = null
     $scope.showSpinner = true
 
-    # Fetch an object based on id from the database
-    <%= _.capitalize(resourceName) %>.find(steroids.view.params.id).then (<%= resourceName %>) ->
-      $scope.$apply ->
-        $scope.<%= resourceName %> = <%= resourceName %>
-        $scope.showSpinner = false
+    supersonic.ui.views.current.params.onValue (values) ->
+      <%= _.capitalize(resourceName) %>.find(values.id).then (<%= resourceName %>) ->
+        $scope.$apply ->
+          $scope.<%= resourceName %> = <%= resourceName %>
+          $scope.showSpinner = false
 
     $scope.submitForm = ->
       $scope.showSpinner = true
