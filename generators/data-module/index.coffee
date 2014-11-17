@@ -11,10 +11,11 @@ strings = require "underscore.string"
 SteroidsGenerator = require '../SteroidsGenerator'
 
 module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
-  constructor: ([resourceName, fieldNames...]) ->
+  constructor: ([resourceName, scriptExt, fieldNames...]) ->
     super
 
     @resourceName = @context.resourceName = resourceName
+    @scriptExt = @context.scriptExt = scriptExt
     @fieldNames = @context.fields = fieldNames
 
     if !@resourceName?.length
@@ -45,13 +46,13 @@ module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
   writing: ->
     @dest.mkdir "app/#{@moduleName}"
 
-    @src.copy "_index.coffee", "app/#{@moduleName}/index.coffee", process: @template
-    @src.copy "scripts/_IndexController.coffee", "app/#{@moduleName}/scripts/IndexController.coffee", process: @template
-    @src.copy "scripts/_NewController.coffee", "app/#{@moduleName}/scripts/NewController.coffee", process: @template
-    @src.copy "scripts/_ShowController.coffee", "app/#{@moduleName}/scripts/ShowController.coffee", process: @template
-    @src.copy "scripts/_EditController.coffee", "app/#{@moduleName}/scripts/EditController.coffee", process: @template
+    @src.copy "_index.#{@scriptExt}", "app/#{@moduleName}/index.#{@scriptExt}", process: @template
+    @src.copy "scripts/_IndexController.#{@scriptExt}", "app/#{@moduleName}/scripts/IndexController.#{@scriptExt}", process: @template
+    @src.copy "scripts/_NewController.#{@scriptExt}", "app/#{@moduleName}/scripts/NewController.#{@scriptExt}", process: @template
+    @src.copy "scripts/_ShowController.#{@scriptExt}", "app/#{@moduleName}/scripts/ShowController.#{@scriptExt}", process: @template
+    @src.copy "scripts/_EditController.#{@scriptExt}", "app/#{@moduleName}/scripts/EditController.#{@scriptExt}", process: @template
 
-    @src.copy "scripts/_Model.coffee", "app/#{@moduleName}/scripts/#{strings.capitalize @resourceName}Model.coffee", process: @template
+    @src.copy "scripts/_Model.#{@scriptExt}", "app/#{@moduleName}/scripts/#{strings.capitalize @resourceName}Model.#{@scriptExt}", process: @template
 
     @src.copy "views/layout.html", "app/#{@moduleName}/views/layout.html"
 

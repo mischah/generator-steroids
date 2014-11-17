@@ -64,11 +64,12 @@ module.exports =
       }
     }, done
 
-  dataModule: ({ targetDirectory, moduleName, resourceName, fields }, done) ->
+  dataModule: ({ targetDirectory, moduleName, resourceName, scriptExt, fields }, done) ->
     runGenerator 'data-module', {
       targetDirectory
       answers: {
         moduleName: moduleName || 'myDataModule'
+        scriptExt: scriptExt || 'coffee'
       }
-      args: [resourceName || 'myResource'].concat (fields || [])
+      args: [resourceName || 'myResource', scriptExt || 'coffee'].concat (fields || [])
     }, done
