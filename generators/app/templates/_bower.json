@@ -4,6 +4,6 @@
   "private": true,
   "dependencies": {
     "angular": "1.3.x",
-    "supersonic": "https://supersonic-backdoor:103944e9fd881b4de88536ab5529a30c387a93bd@github.com/AppGyver/supersonic-bower.git#master"
+    "supersonic": "https://supersonic-backdoor:b4c26e1f31a5e4a17112944a98b51b512035fb0f@github.com/AppGyver/supersonic-bower.git#master"
   }
 }
