@@ -12,6 +12,7 @@ describe('steroids:data-module', function () {
       .inDir(path.join(os.tmpdir(), './temp-test'))
       .withArguments([
         'foo',
+        'coffee',
         'field_one',
         'field_two'
       ])
