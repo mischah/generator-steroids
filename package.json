@@ -1,6 +1,6 @@
 {
   "name": "generator-steroids",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "index.js",
@@ -23,7 +23,10 @@
     "test": "mocha"
   },
   "keywords": [
-    "yeoman-generator", "steroids", "supersonic", "appgyver"
+    "yeoman-generator",
+    "steroids",
+    "supersonic",
+    "appgyver"
   ],
   "dependencies": {
     "chalk": "0.5.1",
