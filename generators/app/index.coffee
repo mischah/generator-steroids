@@ -92,6 +92,7 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
         @src.copy "mpa/common/assets/loading.html", "app/common/assets/loading.html"
         @src.copy "mpa/common/assets/icons/home.svg", "app/common/assets/icons/home.svg"
         @src.copy "mpa/common/assets/icons/cog.svg", "app/common/assets/icons/cog.svg"
+        @src.copy "mpa/common/assets/icons/search.svg", "app/common/assets/icons/search.svg"
         @src.copy "native-styles/ios.css", "app/common/native-styles/ios.css"
         @src.copy "native-styles/android.css", "app/common/native-styles/android.css"
         @src.copy "mpa/common/stylesheets/application.css", "app/common/stylesheets/application.css"
