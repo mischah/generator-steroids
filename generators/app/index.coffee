@@ -112,6 +112,7 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
     spaFiles: ->
       if @appType is "spa"
         @src.copy "spa/index.html", "www/index.html"
+        @src.copy "spa/loading.html", "www/loading.html"
         @src.copy "native-styles/ios.css", "www/native-styles/ios.css"
         @src.copy "native-styles/android.css", "www/native-styles/android.css"
         @src.copy "spa/stylesheets/application.css", "www/stylesheets/application.css"
