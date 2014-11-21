@@ -7,7 +7,7 @@
 
   <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
   <div ng-hide="showSpinner">
-    <ul class="list">
+    <ul class="list" ng-hide="<%= resourceName %>s.length == 0">
 
       <super-navigate location="<%= moduleName %>#show" data-params-id="{{ <%= resourceName %>.id }}" ng-repeat="<%= resourceName %> in <%= resourceName %>s">
         <li class="item item-icon-right">
@@ -15,7 +15,12 @@
           <i class="icon super-ios7-arrow-right"></i>
         </li>
       </super-navigate>
+
     </ul>
+
+    <h4 ng-show="<%= resourceName %>s.length == 0" class="assertive padding">
+      No <%= resourceName %>s found. Create one?
+    </h4>
 
     <super-modal-show location="<%= moduleName %>#new">
       <button class="button button-full button-positive">
