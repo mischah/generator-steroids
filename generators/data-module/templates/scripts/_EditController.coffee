@@ -1,6 +1,6 @@
 angular
   .module('<%= moduleName %>')
-  .controller("EditController", ($scope, <%= _.capitalize(resourceName) %>) ->
+  .controller("EditController", ($scope, <%= _.capitalize(resourceName) %>, supersonic) ->
     $scope.<%= resourceName %> = null
     $scope.showSpinner = true
 

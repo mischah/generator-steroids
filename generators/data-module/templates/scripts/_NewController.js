@@ -1,6 +1,6 @@
 angular
   .module('<%= moduleName %>')
-  .controller("NewController", function ($scope, <%= _.capitalize(resourceName) %>) {
+  .controller("NewController", function ($scope, <%= _.capitalize(resourceName) %>, supersonic) {
     $scope.<%= resourceName %> = {};
 
     $scope.submitForm = function () {

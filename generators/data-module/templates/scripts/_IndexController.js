@@ -1,6 +1,6 @@
 angular
   .module('<%= moduleName %>')
-  .controller("IndexController", function ($scope, <%= _.capitalize(resourceName) %>) {
+  .controller("IndexController", function ($scope, <%= _.capitalize(resourceName) %>, supersonic) {
     $scope.<%= resourceName %>s = null;
     $scope.showSpinner = true;
 
