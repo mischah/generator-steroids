@@ -1,3 +1,13 @@
+#1.0.0 (TODO)
+
+Revamped all generators to generate Supersonic projects, examples and scaffolds. Old Steroids.js-based generators are deprecated and removed. Available generators are:
+
+ - `app`: Generates a new Supersonic MPA or SPA project
+ - `module`: Generates a new Supersonic MPA module
+ - `data-module`: Generates a new CRUD module for a given resource, to be used with Supersonic Data.
+
+Read more about Supersonic and the new generators at [http://docs.appgyver.com](http://docs.appgyver.com).
+
 #0.4.5 (2014-11-05)
 
 Features:
