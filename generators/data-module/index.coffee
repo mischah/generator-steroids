@@ -14,6 +14,7 @@ module.exports = class SteroidsDataModuleGenerator extends SteroidsGenerator
   constructor: ([resourceName, scriptExt, fieldNames...]) ->
     super
 
+    @resourceNameNotLowercased = @context.resourceNameNotLowercased = resourceName
     @resourceName = @context.resourceName = resourceName.toLowerCase()
     @scriptExt = @context.scriptExt = scriptExt
     @fieldNames = @context.fields = fieldNames
