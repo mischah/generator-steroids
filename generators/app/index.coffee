@@ -14,6 +14,10 @@ module.exports = class SteroidsAppGenerator extends SteroidsGenerator
 
   initializing: ->
     @pkg = require("../../package.json")
+    @features =
+      splashscreen:
+        # KLUDGE: toggling AutoHideSplashScreen is disabled in supersonic until native gets a smarter autohide
+        autohide: false
 
   prompting: ->
     done = @async()
