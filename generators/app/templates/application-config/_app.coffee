@@ -9,10 +9,10 @@ module.exports =
   #   extraResponseHeaders:
   #     "Access-Control-Allow-Origin": "*"
   #     "Access-Control-Allow-Headers": "Content-Type, X-Requested-With"
-{{#features.splashscreen.autohide?}}
+{{#features.project.forceDisableSplashScreenAutohide?}}
   splashscreen:
     autohide: true
-{{/features.splashscreen.autohide?}}
+{{/features.project.forceDisableSplashScreenAutohide?}}
 
   webView:
     viewsIgnoreStatusBar: false
