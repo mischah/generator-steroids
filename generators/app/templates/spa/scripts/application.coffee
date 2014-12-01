@@ -1,4 +1,6 @@
-angular.module 'SteroidsApplication', [
-  # Declare here all AngularJS dependencies that are shared by all modules.
+angular.module('SteroidsApplication', [
   'supersonic'
-]
+])
+.controller 'IndexController', ($scope, supersonic) ->
+
+  $scope.navbarTitle = "Welcome to Supersonic!"

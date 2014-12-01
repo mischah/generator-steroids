@@ -1,4 +1,8 @@
 angular.module('SteroidsApplication', [
-  // Declare here all AngularJS dependencies that are shared by all modules.
   'supersonic'
-]);
+])
+.controller('IndexController', function($scope, supersonic) {
+
+  $scope.navbarTitle = "Welcome to Supersonic!";
+
+});
