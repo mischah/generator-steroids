@@ -3,7 +3,6 @@
 module.exports =
   app:
     name: "{{ appName }}"
-    version: "0.1.0"
 
   # network:
   #   extraResponseHeaders:
