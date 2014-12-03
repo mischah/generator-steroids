@@ -1,10 +1,12 @@
 yeoman = require "yeoman-generator"
 mustache = require 'mustache'
+features = require './features'
 
 module.exports = class SteroidsGenerator extends yeoman.generators.Base
   constructor: ->
     super
     @context = {}
+    @features = features
 
   template: (contents) =>
     mustache.render(contents, @context)
