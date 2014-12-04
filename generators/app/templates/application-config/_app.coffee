@@ -20,3 +20,8 @@ module.exports =
     enableViewportScale: false
     enablePopGestureRecognition: true
     allowInlineMediaPlayback: true
+
+  # Applies on iOS only
+  statusBar:
+    enabled: true
+    style: "default"

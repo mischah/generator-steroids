@@ -1,4 +1,8 @@
-#1.0.0 (TODO)
+#1.0.1 (2014-12-04)
+
+Generated projects include the `statusBar` setting in `config/app.coffee`.
+
+#1.0.0 (2014-12-03)
 
 Revamped all generators to generate Supersonic projects, examples and scaffolds. Old Steroids.js-based generators are deprecated and removed. Available generators are:
 
