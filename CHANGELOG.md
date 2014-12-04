@@ -1,4 +1,4 @@
-#1.0.1 (2014-12-04)
+#1.0.17 (2014-12-04)
 
 Generated projects include the `statusBar` setting in `config/app.coffee`.
 
