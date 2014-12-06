@@ -1,4 +1,4 @@
-# generator-devroids [![Build Status](https://magnum.travis-ci.com/AppGyver/generator-devroids.svg?token=gEta3f5dAsub2yyMTo61)](https://magnum.travis-ci.com/AppGyver/generator-devroids)
+# generator-steroids [![Build Status](https://magnum.travis-ci.com/AppGyver/generator-devroids.svg?token=gEta3f5dAsub2yyMTo61)](https://magnum.travis-ci.com/AppGyver/generator-devroids)
 
 > [Yeoman](http://yeoman.io) generator
 
@@ -23,16 +23,16 @@ npm install -g yo
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-To install generator-devroids from npm, run:
+To install generator-steroids from npm, run:
 
 ```bash
-npm install -g generator-devroids
+npm install -g generator-steroids
 ```
 
 Finally, initiate the generator:
 
 ```bash
-yo devroids
+yo steroids
 ```
 
 ### Getting To Know Yeoman
