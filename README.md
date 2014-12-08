@@ -1,7 +1,6 @@
-# generator-steroids [![Build Status](https://magnum.travis-ci.com/AppGyver/generator-devroids.svg?token=gEta3f5dAsub2yyMTo61)](https://magnum.travis-ci.com/AppGyver/generator-devroids)
+# Steroids [Yeoman](http://yeoman.io) generator
 
-> [Yeoman](http://yeoman.io) generator
-
+The Steroids Yeoman generator is meant to be run with the [Steroids CLI](https://github.com/AppGyver/steroids), but instructions for stand-alone usage are included below for completeness' sake.
 
 ## Getting Started
 
