@@ -1,3 +1,8 @@
+#0.5.0 (2015-01-30)
+
+Kicked off subsonic branch:
+- Supersonic compatibility for projects with Steroids^1 structure
+
 #0.4.5 (2014-11-05)
 
 Features:
