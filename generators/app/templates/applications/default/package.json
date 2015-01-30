@@ -5,5 +5,8 @@
   "dependencies": {},
   "devDependencies": {
     "grunt-steroids": "1.x"
+  },
+  "engines": {
+    "steroids": "4.0.0"
   }
 }
