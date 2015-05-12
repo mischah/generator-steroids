@@ -15,12 +15,13 @@ module.exports = function(grunt) {
   grunt.registerTask('copy-cloud-raml-to-config', function() {
     grunt.file.copy((__dirname + '/www/cloud.raml'), (__dirname + '/config/cloud-resources.raml'))
   });
-  
+
   grunt.registerTask("default", [
     "steroids-make",
     "steroids-compile-sass",
     "copy-cloud-raml-to-config",
-    "steroids-setup-cloud-resources"
+    "steroids-setup-cloud-resources",
+    "steroids-make-module-env"
   ]);
 
 };
