@@ -1,3 +1,7 @@
+#1.0.19 (2015-06-08)
+
+Generators use Ionicons v2.0.1.
+
 #1.0.18 (2014-12-11)
 
 Default generated project now has the `steroidsApiKey` and `steroidsAppId` headers set up in `config/app.coffee`. Closes [#683](https://github.com/AppGyver/steroids/issues/683).
