@@ -1,3 +1,7 @@
+#1.0.20 (2015-07-31)
+
+Remove deprecated note from `loading.html` that it's iOS-only.
+
 #1.0.19 (2015-06-08)
 
 Generators use Ionicons v2.0.1.
