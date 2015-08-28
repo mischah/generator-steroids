@@ -2,8 +2,7 @@
   "name": "mySteroidsProject",
   "version": "0.0.0",
   "private": true,
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "grunt-steroids": "1.x"
   },
   "engines": {
